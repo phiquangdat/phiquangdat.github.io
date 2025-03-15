@@ -109,1757 +109,6 @@
         src: url("chrome-extension://gkkdmjjodidppndkbkhhknakbeflbomf/fonts/open_sans/open-sans-v18-latin-800.woff");
       }
     </style>
-    <style type="text/css">
-      .MathJax_Hover_Frame {
-        border-radius: 0.25em;
-        -webkit-border-radius: 0.25em;
-        -moz-border-radius: 0.25em;
-        -khtml-border-radius: 0.25em;
-        box-shadow: 0px 0px 15px #83a;
-        -webkit-box-shadow: 0px 0px 15px #83a;
-        -moz-box-shadow: 0px 0px 15px #83a;
-        -khtml-box-shadow: 0px 0px 15px #83a;
-        border: 1px solid #a6d !important;
-        display: inline-block;
-        position: absolute;
-      }
-      .MathJax_Menu_Button .MathJax_Hover_Arrow {
-        position: absolute;
-        cursor: pointer;
-        display: inline-block;
-        border: 2px solid #aaa;
-        border-radius: 4px;
-        -webkit-border-radius: 4px;
-        -moz-border-radius: 4px;
-        -khtml-border-radius: 4px;
-        font-family: "Courier New", Courier;
-        font-size: 9px;
-        color: #f0f0f0;
-      }
-      .MathJax_Menu_Button .MathJax_Hover_Arrow span {
-        display: block;
-        background-color: #aaa;
-        border: 1px solid;
-        border-radius: 3px;
-        line-height: 0;
-        padding: 4px;
-      }
-      .MathJax_Hover_Arrow:hover {
-        color: white !important;
-        border: 2px solid #ccc !important;
-      }
-      .MathJax_Hover_Arrow:hover span {
-        background-color: #ccc !important;
-      }
-    </style>
-    <style type="text/css">
-      #MathJax_About {
-        position: fixed;
-        left: 50%;
-        width: auto;
-        text-align: center;
-        border: 3px outset;
-        padding: 1em 2em;
-        background-color: #dddddd;
-        color: black;
-        cursor: default;
-        font-family: message-box;
-        font-size: 120%;
-        font-style: normal;
-        text-indent: 0;
-        text-transform: none;
-        line-height: normal;
-        letter-spacing: normal;
-        word-spacing: normal;
-        word-wrap: normal;
-        white-space: nowrap;
-        float: none;
-        z-index: 201;
-        border-radius: 15px;
-        -webkit-border-radius: 15px;
-        -moz-border-radius: 15px;
-        -khtml-border-radius: 15px;
-        box-shadow: 0px 10px 20px #808080;
-        -webkit-box-shadow: 0px 10px 20px #808080;
-        -moz-box-shadow: 0px 10px 20px #808080;
-        -khtml-box-shadow: 0px 10px 20px #808080;
-        filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true');
-      }
-      #MathJax_About.MathJax_MousePost {
-        outline: none;
-      }
-      .MathJax_Menu {
-        position: absolute;
-        background-color: white;
-        color: black;
-        width: auto;
-        padding: 5px 0px;
-        border: 1px solid #cccccc;
-        margin: 0;
-        cursor: default;
-        font: menu;
-        text-align: left;
-        text-indent: 0;
-        text-transform: none;
-        line-height: normal;
-        letter-spacing: normal;
-        word-spacing: normal;
-        word-wrap: normal;
-        white-space: nowrap;
-        float: none;
-        z-index: 201;
-        border-radius: 5px;
-        -webkit-border-radius: 5px;
-        -moz-border-radius: 5px;
-        -khtml-border-radius: 5px;
-        box-shadow: 0px 10px 20px #808080;
-        -webkit-box-shadow: 0px 10px 20px #808080;
-        -moz-box-shadow: 0px 10px 20px #808080;
-        -khtml-box-shadow: 0px 10px 20px #808080;
-        filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true');
-      }
-      .MathJax_MenuItem {
-        padding: 1px 2em;
-        background: transparent;
-      }
-      .MathJax_MenuArrow {
-        position: absolute;
-        right: 0.5em;
-        padding-top: 0.25em;
-        color: #666666;
-        font-size: 0.75em;
-      }
-      .MathJax_MenuActive .MathJax_MenuArrow {
-        color: white;
-      }
-      .MathJax_MenuArrow.RTL {
-        left: 0.5em;
-        right: auto;
-      }
-      .MathJax_MenuCheck {
-        position: absolute;
-        left: 0.7em;
-      }
-      .MathJax_MenuCheck.RTL {
-        right: 0.7em;
-        left: auto;
-      }
-      .MathJax_MenuRadioCheck {
-        position: absolute;
-        left: 0.7em;
-      }
-      .MathJax_MenuRadioCheck.RTL {
-        right: 0.7em;
-        left: auto;
-      }
-      .MathJax_MenuLabel {
-        padding: 1px 2em 3px 1.33em;
-        font-style: italic;
-      }
-      .MathJax_MenuRule {
-        border-top: 1px solid #dddddd;
-        margin: 4px 3px;
-      }
-      .MathJax_MenuDisabled {
-        color: GrayText;
-      }
-      .MathJax_MenuActive {
-        background-color: #606872;
-        color: white;
-      }
-      .MathJax_MenuDisabled:focus,
-      .MathJax_MenuLabel:focus {
-        background-color: #e8e8e8;
-      }
-      .MathJax_ContextMenu:focus {
-        outline: none;
-      }
-      .MathJax_ContextMenu .MathJax_MenuItem:focus {
-        outline: none;
-      }
-      #MathJax_AboutClose {
-        top: 0.2em;
-        right: 0.2em;
-      }
-      .MathJax_Menu .MathJax_MenuClose {
-        top: -10px;
-        left: -10px;
-      }
-      .MathJax_MenuClose {
-        position: absolute;
-        cursor: pointer;
-        display: inline-block;
-        border: 2px solid #aaa;
-        border-radius: 18px;
-        -webkit-border-radius: 18px;
-        -moz-border-radius: 18px;
-        -khtml-border-radius: 18px;
-        font-family: "Courier New", Courier;
-        font-size: 24px;
-        color: #f0f0f0;
-      }
-      .MathJax_MenuClose span {
-        display: block;
-        background-color: #aaa;
-        border: 1.5px solid;
-        border-radius: 18px;
-        -webkit-border-radius: 18px;
-        -moz-border-radius: 18px;
-        -khtml-border-radius: 18px;
-        line-height: 0;
-        padding: 8px 0 6px;
-      }
-      .MathJax_MenuClose:hover {
-        color: white !important;
-        border: 2px solid #ccc !important;
-      }
-      .MathJax_MenuClose:hover span {
-        background-color: #ccc !important;
-      }
-      .MathJax_MenuClose:hover:focus {
-        outline: none;
-      }
-    </style>
-    <style type="text/css">
-      .MathJax_Preview .MJXf-math {
-        color: inherit !important;
-      }
-    </style>
-    <style type="text/css">
-      .MJX_Assistive_MathML {
-        position: absolute !important;
-        top: 0;
-        left: 0;
-        clip: rect(1px, 1px, 1px, 1px);
-        padding: 1px 0 0 0 !important;
-        border: 0 !important;
-        height: 1px !important;
-        width: 1px !important;
-        overflow: hidden !important;
-        display: block !important;
-        -webkit-touch-callout: none;
-        -webkit-user-select: none;
-        -khtml-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-      }
-      .MJX_Assistive_MathML.MJX_Assistive_MathML_Block {
-        width: 100% !important;
-      }
-    </style>
-    <style type="text/css">
-      #MathJax_Zoom {
-        position: absolute;
-        background-color: #f0f0f0;
-        overflow: auto;
-        display: block;
-        z-index: 301;
-        padding: 0.5em;
-        border: 1px solid black;
-        margin: 0;
-        font-weight: normal;
-        font-style: normal;
-        text-align: left;
-        text-indent: 0;
-        text-transform: none;
-        line-height: normal;
-        letter-spacing: normal;
-        word-spacing: normal;
-        word-wrap: normal;
-        white-space: nowrap;
-        float: none;
-        -webkit-box-sizing: content-box;
-        -moz-box-sizing: content-box;
-        box-sizing: content-box;
-        box-shadow: 5px 5px 15px #aaaaaa;
-        -webkit-box-shadow: 5px 5px 15px #aaaaaa;
-        -moz-box-shadow: 5px 5px 15px #aaaaaa;
-        -khtml-box-shadow: 5px 5px 15px #aaaaaa;
-        filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color='gray', Positive='true');
-      }
-      #MathJax_ZoomOverlay {
-        position: absolute;
-        left: 0;
-        top: 0;
-        z-index: 300;
-        display: inline-block;
-        width: 100%;
-        height: 100%;
-        border: 0;
-        padding: 0;
-        margin: 0;
-        background-color: white;
-        opacity: 0;
-        filter: alpha(opacity=0);
-      }
-      #MathJax_ZoomFrame {
-        position: relative;
-        display: inline-block;
-        height: 0;
-        width: 0;
-      }
-      #MathJax_ZoomEventTrap {
-        position: absolute;
-        left: 0;
-        top: 0;
-        z-index: 302;
-        display: inline-block;
-        border: 0;
-        padding: 0;
-        margin: 0;
-        background-color: white;
-        opacity: 0;
-        filter: alpha(opacity=0);
-      }
-    </style>
-    <style type="text/css">
-      .MathJax_Preview {
-        color: #888;
-      }
-      #MathJax_Message {
-        position: fixed;
-        left: 1em;
-        bottom: 1.5em;
-        background-color: #e6e6e6;
-        border: 1px solid #959595;
-        margin: 0px;
-        padding: 2px 8px;
-        z-index: 102;
-        color: black;
-        font-size: 80%;
-        width: auto;
-        white-space: nowrap;
-      }
-      #MathJax_MSIE_Frame {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 0px;
-        z-index: 101;
-        border: 0px;
-        margin: 0px;
-        padding: 0px;
-      }
-      .MathJax_Error {
-        color: #cc0000;
-        font-style: italic;
-      }
-    </style>
-    <style>
-      .swal2-popup.swal2-toast {
-        box-sizing: border-box;
-        grid-column: 1/4 !important;
-        grid-row: 1/4 !important;
-        grid-template-columns: min-content auto min-content;
-        padding: 1em;
-        overflow-y: hidden;
-        background: #fff;
-        box-shadow: 0 0 1px rgba(0, 0, 0, 0.075), 0 1px 2px rgba(0, 0, 0, 0.075),
-          1px 2px 4px rgba(0, 0, 0, 0.075), 1px 3px 8px rgba(0, 0, 0, 0.075),
-          2px 4px 16px rgba(0, 0, 0, 0.075);
-        pointer-events: all;
-      }
-      .swal2-popup.swal2-toast > * {
-        grid-column: 2;
-      }
-      .swal2-popup.swal2-toast .swal2-title {
-        margin: 0.5em 1em;
-        padding: 0;
-        font-size: 1em;
-        text-align: initial;
-      }
-      .swal2-popup.swal2-toast .swal2-loading {
-        justify-content: center;
-      }
-      .swal2-popup.swal2-toast .swal2-input {
-        height: 2em;
-        margin: 0.5em;
-        font-size: 1em;
-      }
-      .swal2-popup.swal2-toast .swal2-validation-message {
-        font-size: 1em;
-      }
-      .swal2-popup.swal2-toast .swal2-footer {
-        margin: 0.5em 0 0;
-        padding: 0.5em 0 0;
-        font-size: 0.8em;
-      }
-      .swal2-popup.swal2-toast .swal2-close {
-        grid-column: 3/3;
-        grid-row: 1/99;
-        align-self: center;
-        width: 0.8em;
-        height: 0.8em;
-        margin: 0;
-        font-size: 2em;
-      }
-      .swal2-popup.swal2-toast .swal2-html-container {
-        margin: 0.5em 1em;
-        padding: 0;
-        overflow: initial;
-        font-size: 1em;
-        text-align: initial;
-      }
-      .swal2-popup.swal2-toast .swal2-html-container:empty {
-        padding: 0;
-      }
-      .swal2-popup.swal2-toast .swal2-loader {
-        grid-column: 1;
-        grid-row: 1/99;
-        align-self: center;
-        width: 2em;
-        height: 2em;
-        margin: 0.25em;
-      }
-      .swal2-popup.swal2-toast .swal2-icon {
-        grid-column: 1;
-        grid-row: 1/99;
-        align-self: center;
-        width: 2em;
-        min-width: 2em;
-        height: 2em;
-        margin: 0 0.5em 0 0;
-      }
-      .swal2-popup.swal2-toast .swal2-icon .swal2-icon-content {
-        display: flex;
-        align-items: center;
-        font-size: 1.8em;
-        font-weight: bold;
-      }
-      .swal2-popup.swal2-toast .swal2-icon.swal2-success .swal2-success-ring {
-        width: 2em;
-        height: 2em;
-      }
-      .swal2-popup.swal2-toast
-        .swal2-icon.swal2-error
-        [class^="swal2-x-mark-line"] {
-        top: 0.875em;
-        width: 1.375em;
-      }
-      .swal2-popup.swal2-toast
-        .swal2-icon.swal2-error
-        [class^="swal2-x-mark-line"][class$="left"] {
-        left: 0.3125em;
-      }
-      .swal2-popup.swal2-toast
-        .swal2-icon.swal2-error
-        [class^="swal2-x-mark-line"][class$="right"] {
-        right: 0.3125em;
-      }
-      .swal2-popup.swal2-toast .swal2-actions {
-        justify-content: flex-start;
-        height: auto;
-        margin: 0;
-        margin-top: 0.5em;
-        padding: 0 0.5em;
-      }
-      .swal2-popup.swal2-toast .swal2-styled {
-        margin: 0.25em 0.5em;
-        padding: 0.4em 0.6em;
-        font-size: 1em;
-      }
-      .swal2-popup.swal2-toast .swal2-success {
-        border-color: #a5dc86;
-      }
-      .swal2-popup.swal2-toast
-        .swal2-success
-        [class^="swal2-success-circular-line"] {
-        position: absolute;
-        width: 1.6em;
-        height: 3em;
-        transform: rotate(45deg);
-        border-radius: 50%;
-      }
-      .swal2-popup.swal2-toast
-        .swal2-success
-        [class^="swal2-success-circular-line"][class$="left"] {
-        top: -0.8em;
-        left: -0.5em;
-        transform: rotate(-45deg);
-        transform-origin: 2em 2em;
-        border-radius: 4em 0 0 4em;
-      }
-      .swal2-popup.swal2-toast
-        .swal2-success
-        [class^="swal2-success-circular-line"][class$="right"] {
-        top: -0.25em;
-        left: 0.9375em;
-        transform-origin: 0 1.5em;
-        border-radius: 0 4em 4em 0;
-      }
-      .swal2-popup.swal2-toast .swal2-success .swal2-success-ring {
-        width: 2em;
-        height: 2em;
-      }
-      .swal2-popup.swal2-toast .swal2-success .swal2-success-fix {
-        top: 0;
-        left: 0.4375em;
-        width: 0.4375em;
-        height: 2.6875em;
-      }
-      .swal2-popup.swal2-toast .swal2-success [class^="swal2-success-line"] {
-        height: 0.3125em;
-      }
-      .swal2-popup.swal2-toast
-        .swal2-success
-        [class^="swal2-success-line"][class$="tip"] {
-        top: 1.125em;
-        left: 0.1875em;
-        width: 0.75em;
-      }
-      .swal2-popup.swal2-toast
-        .swal2-success
-        [class^="swal2-success-line"][class$="long"] {
-        top: 0.9375em;
-        right: 0.1875em;
-        width: 1.375em;
-      }
-      .swal2-popup.swal2-toast
-        .swal2-success.swal2-icon-show
-        .swal2-success-line-tip {
-        animation: swal2-toast-animate-success-line-tip 0.75s;
-      }
-      .swal2-popup.swal2-toast
-        .swal2-success.swal2-icon-show
-        .swal2-success-line-long {
-        animation: swal2-toast-animate-success-line-long 0.75s;
-      }
-      .swal2-popup.swal2-toast.swal2-show {
-        animation: swal2-toast-show 0.5s;
-      }
-      .swal2-popup.swal2-toast.swal2-hide {
-        animation: swal2-toast-hide 0.1s forwards;
-      }
-      div:where(.swal2-container) {
-        display: grid;
-        position: fixed;
-        z-index: 1060;
-        inset: 0;
-        box-sizing: border-box;
-        grid-template-areas: "top-start     top            top-end" "center-start  center         center-end" "bottom-start  bottom-center  bottom-end";
-        grid-template-rows: minmax(min-content, auto) minmax(min-content, auto) minmax(
-            min-content,
-            auto
-          );
-        height: 100%;
-        padding: 0.625em;
-        overflow-x: hidden;
-        transition: background-color 0.1s;
-        -webkit-overflow-scrolling: touch;
-      }
-      div:where(.swal2-container).swal2-backdrop-show,
-      div:where(.swal2-container).swal2-noanimation {
-        background: rgba(0, 0, 0, 0.4);
-      }
-      div:where(.swal2-container).swal2-backdrop-hide {
-        background: rgba(0, 0, 0, 0) !important;
-      }
-      div:where(.swal2-container).swal2-top-start,
-      div:where(.swal2-container).swal2-center-start,
-      div:where(.swal2-container).swal2-bottom-start {
-        grid-template-columns: minmax(0, 1fr) auto auto;
-      }
-      div:where(.swal2-container).swal2-top,
-      div:where(.swal2-container).swal2-center,
-      div:where(.swal2-container).swal2-bottom {
-        grid-template-columns: auto minmax(0, 1fr) auto;
-      }
-      div:where(.swal2-container).swal2-top-end,
-      div:where(.swal2-container).swal2-center-end,
-      div:where(.swal2-container).swal2-bottom-end {
-        grid-template-columns: auto auto minmax(0, 1fr);
-      }
-      div:where(.swal2-container).swal2-top-start > .swal2-popup {
-        align-self: start;
-      }
-      div:where(.swal2-container).swal2-top > .swal2-popup {
-        grid-column: 2;
-        align-self: start;
-        justify-self: center;
-      }
-      div:where(.swal2-container).swal2-top-end > .swal2-popup,
-      div:where(.swal2-container).swal2-top-right > .swal2-popup {
-        grid-column: 3;
-        align-self: start;
-        justify-self: end;
-      }
-      div:where(.swal2-container).swal2-center-start > .swal2-popup,
-      div:where(.swal2-container).swal2-center-left > .swal2-popup {
-        grid-row: 2;
-        align-self: center;
-      }
-      div:where(.swal2-container).swal2-center > .swal2-popup {
-        grid-column: 2;
-        grid-row: 2;
-        align-self: center;
-        justify-self: center;
-      }
-      div:where(.swal2-container).swal2-center-end > .swal2-popup,
-      div:where(.swal2-container).swal2-center-right > .swal2-popup {
-        grid-column: 3;
-        grid-row: 2;
-        align-self: center;
-        justify-self: end;
-      }
-      div:where(.swal2-container).swal2-bottom-start > .swal2-popup,
-      div:where(.swal2-container).swal2-bottom-left > .swal2-popup {
-        grid-column: 1;
-        grid-row: 3;
-        align-self: end;
-      }
-      div:where(.swal2-container).swal2-bottom > .swal2-popup {
-        grid-column: 2;
-        grid-row: 3;
-        justify-self: center;
-        align-self: end;
-      }
-      div:where(.swal2-container).swal2-bottom-end > .swal2-popup,
-      div:where(.swal2-container).swal2-bottom-right > .swal2-popup {
-        grid-column: 3;
-        grid-row: 3;
-        align-self: end;
-        justify-self: end;
-      }
-      div:where(.swal2-container).swal2-grow-row > .swal2-popup,
-      div:where(.swal2-container).swal2-grow-fullscreen > .swal2-popup {
-        grid-column: 1/4;
-        width: 100%;
-      }
-      div:where(.swal2-container).swal2-grow-column > .swal2-popup,
-      div:where(.swal2-container).swal2-grow-fullscreen > .swal2-popup {
-        grid-row: 1/4;
-        align-self: stretch;
-      }
-      div:where(.swal2-container).swal2-no-transition {
-        transition: none !important;
-      }
-      div:where(.swal2-container) div:where(.swal2-popup) {
-        display: none;
-        position: relative;
-        box-sizing: border-box;
-        grid-template-columns: minmax(0, 100%);
-        width: 32em;
-        max-width: 100%;
-        padding: 0 0 1.25em;
-        border: none;
-        border-radius: 5px;
-        background: #fff;
-        color: #545454;
-        font-family: inherit;
-        font-size: 1rem;
-      }
-      div:where(.swal2-container) div:where(.swal2-popup):focus {
-        outline: none;
-      }
-      div:where(.swal2-container) div:where(.swal2-popup).swal2-loading {
-        overflow-y: hidden;
-      }
-      div:where(.swal2-container) h2:where(.swal2-title) {
-        position: relative;
-        max-width: 100%;
-        margin: 0;
-        padding: 0.8em 1em 0;
-        color: inherit;
-        font-size: 1.875em;
-        font-weight: 600;
-        text-align: center;
-        text-transform: none;
-        word-wrap: break-word;
-      }
-      div:where(.swal2-container) div:where(.swal2-actions) {
-        display: flex;
-        z-index: 1;
-        box-sizing: border-box;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: center;
-        width: auto;
-        margin: 1.25em auto 0;
-        padding: 0;
-      }
-      div:where(.swal2-container)
-        div:where(.swal2-actions):not(.swal2-loading)
-        .swal2-styled[disabled] {
-        opacity: 0.4;
-      }
-      div:where(.swal2-container)
-        div:where(.swal2-actions):not(.swal2-loading)
-        .swal2-styled:hover {
-        background-image: linear-gradient(
-          rgba(0, 0, 0, 0.1),
-          rgba(0, 0, 0, 0.1)
-        );
-      }
-      div:where(.swal2-container)
-        div:where(.swal2-actions):not(.swal2-loading)
-        .swal2-styled:active {
-        background-image: linear-gradient(
-          rgba(0, 0, 0, 0.2),
-          rgba(0, 0, 0, 0.2)
-        );
-      }
-      div:where(.swal2-container) div:where(.swal2-loader) {
-        display: none;
-        align-items: center;
-        justify-content: center;
-        width: 2.2em;
-        height: 2.2em;
-        margin: 0 1.875em;
-        animation: swal2-rotate-loading 1.5s linear 0s infinite normal;
-        border-width: 0.25em;
-        border-style: solid;
-        border-radius: 100%;
-        border-color: #2778c4 rgba(0, 0, 0, 0) #2778c4 rgba(0, 0, 0, 0);
-      }
-      div:where(.swal2-container) button:where(.swal2-styled) {
-        margin: 0.3125em;
-        padding: 0.625em 1.1em;
-        transition: box-shadow 0.1s;
-        box-shadow: 0 0 0 3px rgba(0, 0, 0, 0);
-        font-weight: 500;
-      }
-      div:where(.swal2-container) button:where(.swal2-styled):not([disabled]) {
-        cursor: pointer;
-      }
-      div:where(.swal2-container) button:where(.swal2-styled).swal2-confirm {
-        border: 0;
-        border-radius: 0.25em;
-        background: initial;
-        background-color: #7066e0;
-        color: #fff;
-        font-size: 1em;
-      }
-      div:where(.swal2-container)
-        button:where(.swal2-styled).swal2-confirm:focus {
-        box-shadow: 0 0 0 3px rgba(112, 102, 224, 0.5);
-      }
-      div:where(.swal2-container) button:where(.swal2-styled).swal2-deny {
-        border: 0;
-        border-radius: 0.25em;
-        background: initial;
-        background-color: #dc3741;
-        color: #fff;
-        font-size: 1em;
-      }
-      div:where(.swal2-container) button:where(.swal2-styled).swal2-deny:focus {
-        box-shadow: 0 0 0 3px rgba(220, 55, 65, 0.5);
-      }
-      div:where(.swal2-container) button:where(.swal2-styled).swal2-cancel {
-        border: 0;
-        border-radius: 0.25em;
-        background: initial;
-        background-color: #6e7881;
-        color: #fff;
-        font-size: 1em;
-      }
-      div:where(.swal2-container)
-        button:where(.swal2-styled).swal2-cancel:focus {
-        box-shadow: 0 0 0 3px rgba(110, 120, 129, 0.5);
-      }
-      div:where(.swal2-container)
-        button:where(.swal2-styled).swal2-default-outline:focus {
-        box-shadow: 0 0 0 3px rgba(100, 150, 200, 0.5);
-      }
-      div:where(.swal2-container) button:where(.swal2-styled):focus {
-        outline: none;
-      }
-      div:where(.swal2-container)
-        button:where(.swal2-styled)::-moz-focus-inner {
-        border: 0;
-      }
-      div:where(.swal2-container) div:where(.swal2-footer) {
-        margin: 1em 0 0;
-        padding: 1em 1em 0;
-        border-top: 1px solid #eee;
-        color: inherit;
-        font-size: 1em;
-        text-align: center;
-      }
-      div:where(.swal2-container) .swal2-timer-progress-bar-container {
-        position: absolute;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        grid-column: auto !important;
-        overflow: hidden;
-        border-bottom-right-radius: 5px;
-        border-bottom-left-radius: 5px;
-      }
-      div:where(.swal2-container) div:where(.swal2-timer-progress-bar) {
-        width: 100%;
-        height: 0.25em;
-        background: rgba(0, 0, 0, 0.2);
-      }
-      div:where(.swal2-container) img:where(.swal2-image) {
-        max-width: 100%;
-        margin: 2em auto 1em;
-      }
-      div:where(.swal2-container) button:where(.swal2-close) {
-        z-index: 2;
-        align-items: center;
-        justify-content: center;
-        width: 1.2em;
-        height: 1.2em;
-        margin-top: 0;
-        margin-right: 0;
-        margin-bottom: -1.2em;
-        padding: 0;
-        overflow: hidden;
-        transition: color 0.1s, box-shadow 0.1s;
-        border: none;
-        border-radius: 5px;
-        background: rgba(0, 0, 0, 0);
-        color: #ccc;
-        font-family: monospace;
-        font-size: 2.5em;
-        cursor: pointer;
-        justify-self: end;
-      }
-      div:where(.swal2-container) button:where(.swal2-close):hover {
-        transform: none;
-        background: rgba(0, 0, 0, 0);
-        color: #f27474;
-      }
-      div:where(.swal2-container) button:where(.swal2-close):focus {
-        outline: none;
-        box-shadow: inset 0 0 0 3px rgba(100, 150, 200, 0.5);
-      }
-      div:where(.swal2-container) button:where(.swal2-close)::-moz-focus-inner {
-        border: 0;
-      }
-      div:where(.swal2-container) .swal2-html-container {
-        z-index: 1;
-        justify-content: center;
-        margin: 1em 1.6em 0.3em;
-        padding: 0;
-        overflow: auto;
-        color: inherit;
-        font-size: 1.125em;
-        font-weight: normal;
-        line-height: normal;
-        text-align: center;
-        word-wrap: break-word;
-        word-break: break-word;
-      }
-      div:where(.swal2-container) input:where(.swal2-input),
-      div:where(.swal2-container) input:where(.swal2-file),
-      div:where(.swal2-container) textarea:where(.swal2-textarea),
-      div:where(.swal2-container) select:where(.swal2-select),
-      div:where(.swal2-container) div:where(.swal2-radio),
-      div:where(.swal2-container) label:where(.swal2-checkbox) {
-        margin: 1em 2em 3px;
-      }
-      div:where(.swal2-container) input:where(.swal2-input),
-      div:where(.swal2-container) input:where(.swal2-file),
-      div:where(.swal2-container) textarea:where(.swal2-textarea) {
-        box-sizing: border-box;
-        width: auto;
-        transition: border-color 0.1s, box-shadow 0.1s;
-        border: 1px solid #d9d9d9;
-        border-radius: 0.1875em;
-        background: rgba(0, 0, 0, 0);
-        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.06),
-          0 0 0 3px rgba(0, 0, 0, 0);
-        color: inherit;
-        font-size: 1.125em;
-      }
-      div:where(.swal2-container) input:where(.swal2-input).swal2-inputerror,
-      div:where(.swal2-container) input:where(.swal2-file).swal2-inputerror,
-      div:where(.swal2-container)
-        textarea:where(.swal2-textarea).swal2-inputerror {
-        border-color: #f27474 !important;
-        box-shadow: 0 0 2px #f27474 !important;
-      }
-      div:where(.swal2-container) input:where(.swal2-input):focus,
-      div:where(.swal2-container) input:where(.swal2-file):focus,
-      div:where(.swal2-container) textarea:where(.swal2-textarea):focus {
-        border: 1px solid #b4dbed;
-        outline: none;
-        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.06),
-          0 0 0 3px rgba(100, 150, 200, 0.5);
-      }
-      div:where(.swal2-container) input:where(.swal2-input)::placeholder,
-      div:where(.swal2-container) input:where(.swal2-file)::placeholder,
-      div:where(.swal2-container) textarea:where(.swal2-textarea)::placeholder {
-        color: #ccc;
-      }
-      div:where(.swal2-container) .swal2-range {
-        margin: 1em 2em 3px;
-        background: #fff;
-      }
-      div:where(.swal2-container) .swal2-range input {
-        width: 80%;
-      }
-      div:where(.swal2-container) .swal2-range output {
-        width: 20%;
-        color: inherit;
-        font-weight: 600;
-        text-align: center;
-      }
-      div:where(.swal2-container) .swal2-range input,
-      div:where(.swal2-container) .swal2-range output {
-        height: 2.625em;
-        padding: 0;
-        font-size: 1.125em;
-        line-height: 2.625em;
-      }
-      div:where(.swal2-container) .swal2-input {
-        height: 2.625em;
-        padding: 0 0.75em;
-      }
-      div:where(.swal2-container) .swal2-file {
-        width: 75%;
-        margin-right: auto;
-        margin-left: auto;
-        background: rgba(0, 0, 0, 0);
-        font-size: 1.125em;
-      }
-      div:where(.swal2-container) .swal2-textarea {
-        height: 6.75em;
-        padding: 0.75em;
-      }
-      div:where(.swal2-container) .swal2-select {
-        min-width: 50%;
-        max-width: 100%;
-        padding: 0.375em 0.625em;
-        background: rgba(0, 0, 0, 0);
-        color: inherit;
-        font-size: 1.125em;
-      }
-      div:where(.swal2-container) .swal2-radio,
-      div:where(.swal2-container) .swal2-checkbox {
-        align-items: center;
-        justify-content: center;
-        background: #fff;
-        color: inherit;
-      }
-      div:where(.swal2-container) .swal2-radio label,
-      div:where(.swal2-container) .swal2-checkbox label {
-        margin: 0 0.6em;
-        font-size: 1.125em;
-      }
-      div:where(.swal2-container) .swal2-radio input,
-      div:where(.swal2-container) .swal2-checkbox input {
-        flex-shrink: 0;
-        margin: 0 0.4em;
-      }
-      div:where(.swal2-container) label:where(.swal2-input-label) {
-        display: flex;
-        justify-content: center;
-        margin: 1em auto 0;
-      }
-      div:where(.swal2-container) div:where(.swal2-validation-message) {
-        align-items: center;
-        justify-content: center;
-        margin: 1em 0 0;
-        padding: 0.625em;
-        overflow: hidden;
-        background: #f0f0f0;
-        color: #666;
-        font-size: 1em;
-        font-weight: 300;
-      }
-      div:where(.swal2-container) div:where(.swal2-validation-message)::before {
-        content: "!";
-        display: inline-block;
-        width: 1.5em;
-        min-width: 1.5em;
-        height: 1.5em;
-        margin: 0 0.625em;
-        border-radius: 50%;
-        background-color: #f27474;
-        color: #fff;
-        font-weight: 600;
-        line-height: 1.5em;
-        text-align: center;
-      }
-      div:where(.swal2-container) .swal2-progress-steps {
-        flex-wrap: wrap;
-        align-items: center;
-        max-width: 100%;
-        margin: 1.25em auto;
-        padding: 0;
-        background: rgba(0, 0, 0, 0);
-        font-weight: 600;
-      }
-      div:where(.swal2-container) .swal2-progress-steps li {
-        display: inline-block;
-        position: relative;
-      }
-      div:where(.swal2-container) .swal2-progress-steps .swal2-progress-step {
-        z-index: 20;
-        flex-shrink: 0;
-        width: 2em;
-        height: 2em;
-        border-radius: 2em;
-        background: #2778c4;
-        color: #fff;
-        line-height: 2em;
-        text-align: center;
-      }
-      div:where(.swal2-container)
-        .swal2-progress-steps
-        .swal2-progress-step.swal2-active-progress-step {
-        background: #2778c4;
-      }
-      div:where(.swal2-container)
-        .swal2-progress-steps
-        .swal2-progress-step.swal2-active-progress-step
-        ~ .swal2-progress-step {
-        background: #add8e6;
-        color: #fff;
-      }
-      div:where(.swal2-container)
-        .swal2-progress-steps
-        .swal2-progress-step.swal2-active-progress-step
-        ~ .swal2-progress-step-line {
-        background: #add8e6;
-      }
-      div:where(.swal2-container)
-        .swal2-progress-steps
-        .swal2-progress-step-line {
-        z-index: 10;
-        flex-shrink: 0;
-        width: 2.5em;
-        height: 0.4em;
-        margin: 0 -1px;
-        background: #2778c4;
-      }
-      div:where(.swal2-icon) {
-        position: relative;
-        box-sizing: content-box;
-        justify-content: center;
-        width: 5em;
-        height: 5em;
-        margin: 2.5em auto 0.6em;
-        border: 0.25em solid rgba(0, 0, 0, 0);
-        border-radius: 50%;
-        border-color: #000;
-        font-family: inherit;
-        line-height: 5em;
-        cursor: default;
-        user-select: none;
-      }
-      div:where(.swal2-icon) .swal2-icon-content {
-        display: flex;
-        align-items: center;
-        font-size: 3.75em;
-      }
-      div:where(.swal2-icon).swal2-error {
-        border-color: #f27474;
-        color: #f27474;
-      }
-      div:where(.swal2-icon).swal2-error .swal2-x-mark {
-        position: relative;
-        flex-grow: 1;
-      }
-      div:where(.swal2-icon).swal2-error [class^="swal2-x-mark-line"] {
-        display: block;
-        position: absolute;
-        top: 2.3125em;
-        width: 2.9375em;
-        height: 0.3125em;
-        border-radius: 0.125em;
-        background-color: #f27474;
-      }
-      div:where(.swal2-icon).swal2-error
-        [class^="swal2-x-mark-line"][class$="left"] {
-        left: 1.0625em;
-        transform: rotate(45deg);
-      }
-      div:where(.swal2-icon).swal2-error
-        [class^="swal2-x-mark-line"][class$="right"] {
-        right: 1em;
-        transform: rotate(-45deg);
-      }
-      div:where(.swal2-icon).swal2-error.swal2-icon-show {
-        animation: swal2-animate-error-icon 0.5s;
-      }
-      div:where(.swal2-icon).swal2-error.swal2-icon-show .swal2-x-mark {
-        animation: swal2-animate-error-x-mark 0.5s;
-      }
-      div:where(.swal2-icon).swal2-warning {
-        border-color: #facea8;
-        color: #f8bb86;
-      }
-      div:where(.swal2-icon).swal2-warning.swal2-icon-show {
-        animation: swal2-animate-error-icon 0.5s;
-      }
-      div:where(.swal2-icon).swal2-warning.swal2-icon-show .swal2-icon-content {
-        animation: swal2-animate-i-mark 0.5s;
-      }
-      div:where(.swal2-icon).swal2-info {
-        border-color: #9de0f6;
-        color: #3fc3ee;
-      }
-      div:where(.swal2-icon).swal2-info.swal2-icon-show {
-        animation: swal2-animate-error-icon 0.5s;
-      }
-      div:where(.swal2-icon).swal2-info.swal2-icon-show .swal2-icon-content {
-        animation: swal2-animate-i-mark 0.8s;
-      }
-      div:where(.swal2-icon).swal2-question {
-        border-color: #c9dae1;
-        color: #87adbd;
-      }
-      div:where(.swal2-icon).swal2-question.swal2-icon-show {
-        animation: swal2-animate-error-icon 0.5s;
-      }
-      div:where(.swal2-icon).swal2-question.swal2-icon-show
-        .swal2-icon-content {
-        animation: swal2-animate-question-mark 0.8s;
-      }
-      div:where(.swal2-icon).swal2-success {
-        border-color: #a5dc86;
-        color: #a5dc86;
-      }
-      div:where(.swal2-icon).swal2-success
-        [class^="swal2-success-circular-line"] {
-        position: absolute;
-        width: 3.75em;
-        height: 7.5em;
-        transform: rotate(45deg);
-        border-radius: 50%;
-      }
-      div:where(.swal2-icon).swal2-success
-        [class^="swal2-success-circular-line"][class$="left"] {
-        top: -0.4375em;
-        left: -2.0635em;
-        transform: rotate(-45deg);
-        transform-origin: 3.75em 3.75em;
-        border-radius: 7.5em 0 0 7.5em;
-      }
-      div:where(.swal2-icon).swal2-success
-        [class^="swal2-success-circular-line"][class$="right"] {
-        top: -0.6875em;
-        left: 1.875em;
-        transform: rotate(-45deg);
-        transform-origin: 0 3.75em;
-        border-radius: 0 7.5em 7.5em 0;
-      }
-      div:where(.swal2-icon).swal2-success .swal2-success-ring {
-        position: absolute;
-        z-index: 2;
-        top: -0.25em;
-        left: -0.25em;
-        box-sizing: content-box;
-        width: 100%;
-        height: 100%;
-        border: 0.25em solid rgba(165, 220, 134, 0.3);
-        border-radius: 50%;
-      }
-      div:where(.swal2-icon).swal2-success .swal2-success-fix {
-        position: absolute;
-        z-index: 1;
-        top: 0.5em;
-        left: 1.625em;
-        width: 0.4375em;
-        height: 5.625em;
-        transform: rotate(-45deg);
-      }
-      div:where(.swal2-icon).swal2-success [class^="swal2-success-line"] {
-        display: block;
-        position: absolute;
-        z-index: 2;
-        height: 0.3125em;
-        border-radius: 0.125em;
-        background-color: #a5dc86;
-      }
-      div:where(.swal2-icon).swal2-success
-        [class^="swal2-success-line"][class$="tip"] {
-        top: 2.875em;
-        left: 0.8125em;
-        width: 1.5625em;
-        transform: rotate(45deg);
-      }
-      div:where(.swal2-icon).swal2-success
-        [class^="swal2-success-line"][class$="long"] {
-        top: 2.375em;
-        right: 0.5em;
-        width: 2.9375em;
-        transform: rotate(-45deg);
-      }
-      div:where(.swal2-icon).swal2-success.swal2-icon-show
-        .swal2-success-line-tip {
-        animation: swal2-animate-success-line-tip 0.75s;
-      }
-      div:where(.swal2-icon).swal2-success.swal2-icon-show
-        .swal2-success-line-long {
-        animation: swal2-animate-success-line-long 0.75s;
-      }
-      div:where(.swal2-icon).swal2-success.swal2-icon-show
-        .swal2-success-circular-line-right {
-        animation: swal2-rotate-success-circular-line 4.25s ease-in;
-      }
-      [class^="swal2"] {
-        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-      }
-      .swal2-show {
-        animation: swal2-show 0.3s;
-      }
-      .swal2-hide {
-        animation: swal2-hide 0.15s forwards;
-      }
-      .swal2-noanimation {
-        transition: none;
-      }
-      .swal2-scrollbar-measure {
-        position: absolute;
-        top: -9999px;
-        width: 50px;
-        height: 50px;
-        overflow: scroll;
-      }
-      .swal2-rtl .swal2-close {
-        margin-right: initial;
-        margin-left: 0;
-      }
-      .swal2-rtl .swal2-timer-progress-bar {
-        right: 0;
-        left: auto;
-      }
-      @keyframes swal2-toast-show {
-        0% {
-          transform: translateY(-0.625em) rotateZ(2deg);
-        }
-        33% {
-          transform: translateY(0) rotateZ(-2deg);
-        }
-        66% {
-          transform: translateY(0.3125em) rotateZ(2deg);
-        }
-        100% {
-          transform: translateY(0) rotateZ(0deg);
-        }
-      }
-      @keyframes swal2-toast-hide {
-        100% {
-          transform: rotateZ(1deg);
-          opacity: 0;
-        }
-      }
-      @keyframes swal2-toast-animate-success-line-tip {
-        0% {
-          top: 0.5625em;
-          left: 0.0625em;
-          width: 0;
-        }
-        54% {
-          top: 0.125em;
-          left: 0.125em;
-          width: 0;
-        }
-        70% {
-          top: 0.625em;
-          left: -0.25em;
-          width: 1.625em;
-        }
-        84% {
-          top: 1.0625em;
-          left: 0.75em;
-          width: 0.5em;
-        }
-        100% {
-          top: 1.125em;
-          left: 0.1875em;
-          width: 0.75em;
-        }
-      }
-      @keyframes swal2-toast-animate-success-line-long {
-        0% {
-          top: 1.625em;
-          right: 1.375em;
-          width: 0;
-        }
-        65% {
-          top: 1.25em;
-          right: 0.9375em;
-          width: 0;
-        }
-        84% {
-          top: 0.9375em;
-          right: 0;
-          width: 1.125em;
-        }
-        100% {
-          top: 0.9375em;
-          right: 0.1875em;
-          width: 1.375em;
-        }
-      }
-      @keyframes swal2-show {
-        0% {
-          transform: scale(0.7);
-        }
-        45% {
-          transform: scale(1.05);
-        }
-        80% {
-          transform: scale(0.95);
-        }
-        100% {
-          transform: scale(1);
-        }
-      }
-      @keyframes swal2-hide {
-        0% {
-          transform: scale(1);
-          opacity: 1;
-        }
-        100% {
-          transform: scale(0.5);
-          opacity: 0;
-        }
-      }
-      @keyframes swal2-animate-success-line-tip {
-        0% {
-          top: 1.1875em;
-          left: 0.0625em;
-          width: 0;
-        }
-        54% {
-          top: 1.0625em;
-          left: 0.125em;
-          width: 0;
-        }
-        70% {
-          top: 2.1875em;
-          left: -0.375em;
-          width: 3.125em;
-        }
-        84% {
-          top: 3em;
-          left: 1.3125em;
-          width: 1.0625em;
-        }
-        100% {
-          top: 2.8125em;
-          left: 0.8125em;
-          width: 1.5625em;
-        }
-      }
-      @keyframes swal2-animate-success-line-long {
-        0% {
-          top: 3.375em;
-          right: 2.875em;
-          width: 0;
-        }
-        65% {
-          top: 3.375em;
-          right: 2.875em;
-          width: 0;
-        }
-        84% {
-          top: 2.1875em;
-          right: 0;
-          width: 3.4375em;
-        }
-        100% {
-          top: 2.375em;
-          right: 0.5em;
-          width: 2.9375em;
-        }
-      }
-      @keyframes swal2-rotate-success-circular-line {
-        0% {
-          transform: rotate(-45deg);
-        }
-        5% {
-          transform: rotate(-45deg);
-        }
-        12% {
-          transform: rotate(-405deg);
-        }
-        100% {
-          transform: rotate(-405deg);
-        }
-      }
-      @keyframes swal2-animate-error-x-mark {
-        0% {
-          margin-top: 1.625em;
-          transform: scale(0.4);
-          opacity: 0;
-        }
-        50% {
-          margin-top: 1.625em;
-          transform: scale(0.4);
-          opacity: 0;
-        }
-        80% {
-          margin-top: -0.375em;
-          transform: scale(1.15);
-        }
-        100% {
-          margin-top: 0;
-          transform: scale(1);
-          opacity: 1;
-        }
-      }
-      @keyframes swal2-animate-error-icon {
-        0% {
-          transform: rotateX(100deg);
-          opacity: 0;
-        }
-        100% {
-          transform: rotateX(0deg);
-          opacity: 1;
-        }
-      }
-      @keyframes swal2-rotate-loading {
-        0% {
-          transform: rotate(0deg);
-        }
-        100% {
-          transform: rotate(360deg);
-        }
-      }
-      @keyframes swal2-animate-question-mark {
-        0% {
-          transform: rotateY(-360deg);
-        }
-        100% {
-          transform: rotateY(0);
-        }
-      }
-      @keyframes swal2-animate-i-mark {
-        0% {
-          transform: rotateZ(45deg);
-          opacity: 0;
-        }
-        25% {
-          transform: rotateZ(-25deg);
-          opacity: 0.4;
-        }
-        50% {
-          transform: rotateZ(15deg);
-          opacity: 0.8;
-        }
-        75% {
-          transform: rotateZ(-5deg);
-          opacity: 1;
-        }
-        100% {
-          transform: rotateX(0);
-          opacity: 1;
-        }
-      }
-      body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown) {
-        overflow: hidden;
-      }
-      body.swal2-height-auto {
-        height: auto !important;
-      }
-      body.swal2-no-backdrop .swal2-container {
-        background-color: rgba(0, 0, 0, 0) !important;
-        pointer-events: none;
-      }
-      body.swal2-no-backdrop .swal2-container .swal2-popup {
-        pointer-events: all;
-      }
-      body.swal2-no-backdrop .swal2-container .swal2-modal {
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-      }
-      @media print {
-        body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown) {
-          overflow-y: scroll !important;
-        }
-        body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown)
-          > [aria-hidden="true"] {
-          display: none;
-        }
-        body.swal2-shown:not(.swal2-no-backdrop):not(.swal2-toast-shown)
-          .swal2-container {
-          position: static !important;
-        }
-      }
-      body.swal2-toast-shown .swal2-container {
-        box-sizing: border-box;
-        width: 360px;
-        max-width: 100%;
-        background-color: rgba(0, 0, 0, 0);
-        pointer-events: none;
-      }
-      body.swal2-toast-shown .swal2-container.swal2-top {
-        inset: 0 auto auto 50%;
-        transform: translateX(-50%);
-      }
-      body.swal2-toast-shown .swal2-container.swal2-top-end,
-      body.swal2-toast-shown .swal2-container.swal2-top-right {
-        inset: 0 0 auto auto;
-      }
-      body.swal2-toast-shown .swal2-container.swal2-top-start,
-      body.swal2-toast-shown .swal2-container.swal2-top-left {
-        inset: 0 auto auto 0;
-      }
-      body.swal2-toast-shown .swal2-container.swal2-center-start,
-      body.swal2-toast-shown .swal2-container.swal2-center-left {
-        inset: 50% auto auto 0;
-        transform: translateY(-50%);
-      }
-      body.swal2-toast-shown .swal2-container.swal2-center {
-        inset: 50% auto auto 50%;
-        transform: translate(-50%, -50%);
-      }
-      body.swal2-toast-shown .swal2-container.swal2-center-end,
-      body.swal2-toast-shown .swal2-container.swal2-center-right {
-        inset: 50% 0 auto auto;
-        transform: translateY(-50%);
-      }
-      body.swal2-toast-shown .swal2-container.swal2-bottom-start,
-      body.swal2-toast-shown .swal2-container.swal2-bottom-left {
-        inset: auto auto 0 0;
-      }
-      body.swal2-toast-shown .swal2-container.swal2-bottom {
-        inset: auto auto 0 50%;
-        transform: translateX(-50%);
-      }
-      body.swal2-toast-shown .swal2-container.swal2-bottom-end,
-      body.swal2-toast-shown .swal2-container.swal2-bottom-right {
-        inset: auto 0 0 auto;
-      }
-    </style>
-    <style type="text/css">
-      .MJXp-script {
-        font-size: 0.8em;
-      }
-      .MJXp-right {
-        -webkit-transform-origin: right;
-        -moz-transform-origin: right;
-        -ms-transform-origin: right;
-        -o-transform-origin: right;
-        transform-origin: right;
-      }
-      .MJXp-bold {
-        font-weight: bold;
-      }
-      .MJXp-italic {
-        font-style: italic;
-      }
-      .MJXp-scr {
-        font-family: MathJax_Script, "Times New Roman", Times, STIXGeneral,
-          serif;
-      }
-      .MJXp-frak {
-        font-family: MathJax_Fraktur, "Times New Roman", Times, STIXGeneral,
-          serif;
-      }
-      .MJXp-sf {
-        font-family: MathJax_SansSerif, "Times New Roman", Times, STIXGeneral,
-          serif;
-      }
-      .MJXp-cal {
-        font-family: MathJax_Caligraphic, "Times New Roman", Times, STIXGeneral,
-          serif;
-      }
-      .MJXp-mono {
-        font-family: MathJax_Typewriter, "Times New Roman", Times, STIXGeneral,
-          serif;
-      }
-      .MJXp-largeop {
-        font-size: 150%;
-      }
-      .MJXp-largeop.MJXp-int {
-        vertical-align: -0.2em;
-      }
-      .MJXp-math {
-        display: inline-block;
-        line-height: 1.2;
-        text-indent: 0;
-        font-family: "Times New Roman", Times, STIXGeneral, serif;
-        white-space: nowrap;
-        border-collapse: collapse;
-      }
-      .MJXp-display {
-        display: block;
-        text-align: center;
-        margin: 1em 0;
-      }
-      .MJXp-math span {
-        display: inline-block;
-      }
-      .MJXp-box {
-        display: block !important;
-        text-align: center;
-      }
-      .MJXp-box:after {
-        content: " ";
-      }
-      .MJXp-rule {
-        display: block !important;
-        margin-top: 0.1em;
-      }
-      .MJXp-char {
-        display: block !important;
-      }
-      .MJXp-mo {
-        margin: 0 0.15em;
-      }
-      .MJXp-mfrac {
-        margin: 0 0.125em;
-        vertical-align: 0.25em;
-      }
-      .MJXp-denom {
-        display: inline-table !important;
-        width: 100%;
-      }
-      .MJXp-denom > * {
-        display: table-row !important;
-      }
-      .MJXp-surd {
-        vertical-align: top;
-      }
-      .MJXp-surd > * {
-        display: block !important;
-      }
-      .MJXp-script-box > * {
-        display: table !important;
-        height: 50%;
-      }
-      .MJXp-script-box > * > * {
-        display: table-cell !important;
-        vertical-align: top;
-      }
-      .MJXp-script-box > *:last-child > * {
-        vertical-align: bottom;
-      }
-      .MJXp-script-box > * > * > * {
-        display: block !important;
-      }
-      .MJXp-mphantom {
-        visibility: hidden;
-      }
-      .MJXp-munderover {
-        display: inline-table !important;
-      }
-      .MJXp-over {
-        display: inline-block !important;
-        text-align: center;
-      }
-      .MJXp-over > * {
-        display: block !important;
-      }
-      .MJXp-munderover > * {
-        display: table-row !important;
-      }
-      .MJXp-mtable {
-        vertical-align: 0.25em;
-        margin: 0 0.125em;
-      }
-      .MJXp-mtable > * {
-        display: inline-table !important;
-        vertical-align: middle;
-      }
-      .MJXp-mtr {
-        display: table-row !important;
-      }
-      .MJXp-mtd {
-        display: table-cell !important;
-        text-align: center;
-        padding: 0.5em 0 0 0.5em;
-      }
-      .MJXp-mtr > .MJXp-mtd:first-child {
-        padding-left: 0;
-      }
-      .MJXp-mtr:first-child > .MJXp-mtd {
-        padding-top: 0;
-      }
-      .MJXp-mlabeledtr {
-        display: table-row !important;
-      }
-      .MJXp-mlabeledtr > .MJXp-mtd:first-child {
-        padding-left: 0;
-      }
-      .MJXp-mlabeledtr:first-child > .MJXp-mtd {
-        padding-top: 0;
-      }
-      .MJXp-merror {
-        background-color: #ffff88;
-        color: #cc0000;
-        border: 1px solid #cc0000;
-        padding: 1px 3px;
-        font-style: normal;
-        font-size: 90%;
-      }
-      .MJXp-scale0 {
-        -webkit-transform: scaleX(0);
-        -moz-transform: scaleX(0);
-        -ms-transform: scaleX(0);
-        -o-transform: scaleX(0);
-        transform: scaleX(0);
-      }
-      .MJXp-scale1 {
-        -webkit-transform: scaleX(0.1);
-        -moz-transform: scaleX(0.1);
-        -ms-transform: scaleX(0.1);
-        -o-transform: scaleX(0.1);
-        transform: scaleX(0.1);
-      }
-      .MJXp-scale2 {
-        -webkit-transform: scaleX(0.2);
-        -moz-transform: scaleX(0.2);
-        -ms-transform: scaleX(0.2);
-        -o-transform: scaleX(0.2);
-        transform: scaleX(0.2);
-      }
-      .MJXp-scale3 {
-        -webkit-transform: scaleX(0.3);
-        -moz-transform: scaleX(0.3);
-        -ms-transform: scaleX(0.3);
-        -o-transform: scaleX(0.3);
-        transform: scaleX(0.3);
-      }
-      .MJXp-scale4 {
-        -webkit-transform: scaleX(0.4);
-        -moz-transform: scaleX(0.4);
-        -ms-transform: scaleX(0.4);
-        -o-transform: scaleX(0.4);
-        transform: scaleX(0.4);
-      }
-      .MJXp-scale5 {
-        -webkit-transform: scaleX(0.5);
-        -moz-transform: scaleX(0.5);
-        -ms-transform: scaleX(0.5);
-        -o-transform: scaleX(0.5);
-        transform: scaleX(0.5);
-      }
-      .MJXp-scale6 {
-        -webkit-transform: scaleX(0.6);
-        -moz-transform: scaleX(0.6);
-        -ms-transform: scaleX(0.6);
-        -o-transform: scaleX(0.6);
-        transform: scaleX(0.6);
-      }
-      .MJXp-scale7 {
-        -webkit-transform: scaleX(0.7);
-        -moz-transform: scaleX(0.7);
-        -ms-transform: scaleX(0.7);
-        -o-transform: scaleX(0.7);
-        transform: scaleX(0.7);
-      }
-      .MJXp-scale8 {
-        -webkit-transform: scaleX(0.8);
-        -moz-transform: scaleX(0.8);
-        -ms-transform: scaleX(0.8);
-        -o-transform: scaleX(0.8);
-        transform: scaleX(0.8);
-      }
-      .MJXp-scale9 {
-        -webkit-transform: scaleX(0.9);
-        -moz-transform: scaleX(0.9);
-        -ms-transform: scaleX(0.9);
-        -o-transform: scaleX(0.9);
-        transform: scaleX(0.9);
-      }
-      .MathJax_PHTML .noError {
-        vertical-align: ;
-        font-size: 90%;
-        text-align: left;
-        color: black;
-        padding: 1px 3px;
-        border: 1px solid;
-      }
-    </style>
   </head>
 
   <body class="layout-default">
@@ -1872,9 +121,7 @@
           <a
             class="navbar-brand text-dark font-weight-bold big d-flex align-items-center"
             style="text-decoration: none"
-            href="https://seanboe.com/temp_site/"
           >
-            <!-- <img class="mr-2" src="🚀" alt="logo">  -->
             <h1>🚀</h1>
           </a>
           |
@@ -1891,26 +138,7 @@
             <a
               class="d-inline-block social-icon"
               target="_blank"
-              href="https://www.instagram.com/sean.boe/"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="19"
-                height="19"
-                fill="currentColor"
-                class="bi bi-instagram"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"
-                ></path>
-              </svg>
-            </a>
-
-            <a
-              class="d-inline-block social-icon"
-              target="_blank"
-              href="https://github.com/seanboe"
+              href="https://github.com/phiquangdat"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -1928,26 +156,7 @@
             <a
               class="d-inline-block social-icon"
               target="_blank"
-              href="https://www.youtube.com/channel/UCSMmECMAWD-FGQWWuThr7_w"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                fill="currentColor"
-                viewBox="0 20 576 512"
-              >
-                <path
-                  fill="currentColor"
-                  d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"
-                ></path>
-              </svg>
-            </a>
-
-            <a
-              class="d-inline-block social-icon"
-              target="_blank"
-              href="mailto:boeseany21@gmail.com"
+              href="mailto:datqphi@gmail.com"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -1964,17 +173,22 @@
             </a>
 
             <!-- Linkedin -->
-            <!-- <a class="d-inline-block social-icon" target="_blank" href="mailto:boeseany21@gmail.com">
-              <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
-            </a> -->
-
-            <!-- <a class="d-inline-block social-icon" target="_blank" href="">
-              <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
-              <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
-            </svg>
-            </a> -->
+            <a
+              class="d-inline-block social-icon"
+              target="_blank"
+              href="https://www.linkedin.com/in/phiquangdat/"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="1em"
+                viewBox="0 0 448 512"
+              >
+                <path
+                  d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"
+                />
+              </svg>
+            </a>
           </div>
-
           <button
             class="navbar-toggler"
             type="button"
@@ -1998,7 +212,6 @@
             </svg>
           </button>
 
-          <!-- Removed top Button -->
           <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul
               class="navbar-nav ml-auto font-weight-bold d-flex align-items-center"
@@ -2089,27 +302,15 @@
                   >
                 </h2>
                 <p class="card-text">
-                  After nearly three weeks of waiting (digikey parts came in
+                  After nearly three weeks of waiting digikey parts came in
                   super late due to a...
                 </p>
                 <div class="metafooter">
                   <div class="wrapfooter small d-flex align-items-center">
-                    <span class="post-date">28 Jul 2024</span>
+                    <span class="post-date"></span>
                     &nbsp; • &nbsp;
 
                     <span class="reading-time"> 7 min read </span>
-
-                    <!-- &nbsp;
-                &#x2022; -->
-
-                    <!-- 185
-
-<a class="d-inline-block social-icon">
-  <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" viewBox="0 20 576 600">
-    <path fill="currentColor" d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"></path>
-  </svg>
-</svg>
-</a> -->
 
                     <div class="clearfix"></div>
                   </div>
@@ -2141,7 +342,7 @@
                 </h2>
                 <p class="card-text">
                   This post is unfinished! I worked on this project a few months
-                  ago (and am...
+                  ago and am...
                 </p>
                 <div class="metafooter">
                   <div class="wrapfooter small d-flex align-items-center">
@@ -2149,19 +350,6 @@
                     &nbsp; • &nbsp;
 
                     <span class="reading-time"> 1 min read </span>
-
-                    <!-- &nbsp;
-                &#x2022; -->
-
-                    <!-- 185
-
-<a class="d-inline-block social-icon">
-  <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" viewBox="0 20 576 600">
-    <path fill="currentColor" d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"></path>
-  </svg>
-</svg>
-</a> -->
-
                     <div class="clearfix"></div>
                   </div>
                 </div>
@@ -2176,7 +364,7 @@
             <!-- begin post -->
 
             <div class="card">
-              <a href="https://seanboe.com/temp_site/quadruped9/">
+              <a href="">
                 <img
                   class="rounded mb-4"
                   style="height: 12rem; object-fit: cover; width: 100%"
@@ -2201,18 +389,6 @@
 
                     <span class="reading-time"> 9 min read </span>
 
-                    <!-- &nbsp;
-                &#x2022; -->
-
-                    <!-- 185
-
-<a class="d-inline-block social-icon">
-  <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" viewBox="0 20 576 600">
-    <path fill="currentColor" d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"></path>
-  </svg>
-</svg>
-</a> -->
-
                     <div class="clearfix"></div>
                   </div>
                 </div>
@@ -2235,7 +411,7 @@
             <!-- begin post -->
 
             <div class="card">
-              <a href="https://seanboe.com/temp_site/maple2/">
+              <a href="">
                 <img
                   class="rounded mb-4"
                   style="height: 12rem; object-fit: cover; width: 100%"
@@ -2245,9 +421,7 @@
               </a>
               <div class="card-block">
                 <h2 class="card-title h4 serif-font">
-                  <a href="https://seanboe.com/temp_site/maple2/"
-                    >DC Link Capacitor Sizing for Traction Inverters</a
-                  >
+                  <a href="">DC Link Capacitor Sizing for Traction Inverters</a>
                 </h2>
                 <p class="card-text">
                   One of reasons for writing maple was to get a better idea of
@@ -2259,19 +433,6 @@
                     &nbsp; • &nbsp;
 
                     <span class="reading-time"> 3 min read </span>
-
-                    <!-- &nbsp;
-                &#x2022; -->
-
-                    <!-- 185
-
-<a class="d-inline-block social-icon">
-  <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" viewBox="0 20 576 600">
-    <path fill="currentColor" d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"></path>
-  </svg>
-</svg>
-</a> -->
-
                     <div class="clearfix"></div>
                   </div>
                 </div>
@@ -2286,7 +447,7 @@
             <!-- begin post -->
 
             <div class="card">
-              <a href="https://seanboe.com/temp_site/maple1/">
+              <a href="">
                 <img
                   class="rounded mb-4"
                   style="height: 12rem; object-fit: cover; width: 100%"
@@ -2296,7 +457,7 @@
               </a>
               <div class="card-block">
                 <h2 class="card-title h4 serif-font">
-                  <a href="https://seanboe.com/temp_site/maple1/"
+                  <a href=""
                     >Simulation and Torque Optimization of PMSM Motors</a
                   >
                 </h2>
@@ -2311,18 +472,6 @@
 
                     <span class="reading-time"> 8 min read </span>
 
-                    <!-- &nbsp;
-                &#x2022; -->
-
-                    <!-- 185
-
-<a class="d-inline-block social-icon">
-  <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" viewBox="0 20 576 600">
-    <path fill="currentColor" d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"></path>
-  </svg>
-</svg>
-</a> -->
-
                     <div class="clearfix"></div>
                   </div>
                 </div>
@@ -2337,7 +486,7 @@
             <!-- begin post -->
 
             <div class="card">
-              <a href="https://seanboe.com/temp_site/PowerEEFCML/">
+              <a href="">
                 <img
                   class="rounded mb-4"
                   style="height: 12rem; object-fit: cover; width: 100%"
@@ -2347,9 +496,7 @@
               </a>
               <div class="card-block">
                 <h2 class="card-title h4 serif-font">
-                  <a href="https://seanboe.com/temp_site/PowerEEFCML/"
-                    >3-Level Flying Capacitor Multilevel Inverter</a
-                  >
+                  <a href="">3-Level Flying Capacitor Multilevel Inverter</a>
                 </h2>
                 <p class="card-text">
                   Designing a wirelessly-chareable RC Car with an FCML and
@@ -2361,19 +508,6 @@
                     &nbsp; • &nbsp;
 
                     <span class="reading-time"> 15 min read </span>
-
-                    <!-- &nbsp;
-                &#x2022; -->
-
-                    <!-- 185
-
-<a class="d-inline-block social-icon">
-  <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" viewBox="0 20 576 600">
-    <path fill="currentColor" d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"></path>
-  </svg>
-</svg>
-</a> -->
-
                     <div class="clearfix"></div>
                   </div>
                 </div>
@@ -2388,7 +522,7 @@
             <!-- begin post -->
 
             <div class="card">
-              <a href="https://seanboe.com/temp_site/megalv1/">
+              <a href="">
                 <img
                   class="rounded mb-4"
                   style="height: 12rem; object-fit: cover; width: 100%"
@@ -2398,9 +532,7 @@
               </a>
               <div class="card-block">
                 <h2 class="card-title h4 serif-font">
-                  <a href="https://seanboe.com/temp_site/megalv1/"
-                    >Race car Avionics</a
-                  >
+                  <a href="">Race car Avionics</a>
                 </h2>
                 <p class="card-text">
                   As you may know, I’m on MIT Motorsports. We build an electric
@@ -2412,19 +544,6 @@
                     &nbsp; • &nbsp;
 
                     <span class="reading-time"> 4 min read </span>
-
-                    <!-- &nbsp;
-                &#x2022; -->
-
-                    <!-- 185
-
-<a class="d-inline-block social-icon">
-  <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" viewBox="0 20 576 600">
-    <path fill="currentColor" d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"></path>
-  </svg>
-</svg>
-</a> -->
-
                     <div class="clearfix"></div>
                   </div>
                 </div>
@@ -2439,7 +558,7 @@
             <!-- begin post -->
 
             <div class="card">
-              <a href="https://seanboe.com/temp_site/stimulatorPart3/">
+              <a href="">
                 <img
                   class="rounded mb-4"
                   style="height: 12rem; object-fit: cover; width: 100%"
@@ -2449,9 +568,7 @@
               </a>
               <div class="card-block">
                 <h2 class="card-title h4 serif-font">
-                  <a href="https://seanboe.com/temp_site/stimulatorPart3/"
-                    >Muscle Stimulator Part 3</a
-                  >
+                  <a href="">Muscle Stimulator Part 3</a>
                 </h2>
                 <p class="card-text">
                   A week after sending version 2 of the driver board out (see my
@@ -2464,18 +581,6 @@
 
                     <span class="reading-time"> 2 min read </span>
 
-                    <!-- &nbsp;
-                &#x2022; -->
-
-                    <!-- 185
-
-<a class="d-inline-block social-icon">
-  <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" viewBox="0 20 576 600">
-    <path fill="currentColor" d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"></path>
-  </svg>
-</svg>
-</a> -->
-
                     <div class="clearfix"></div>
                   </div>
                 </div>
@@ -2490,7 +595,7 @@
             <!-- begin post -->
 
             <div class="card">
-              <a href="https://seanboe.com/temp_site/stimulatorPart1/">
+              <a href="">
                 <img
                   class="rounded mb-4"
                   style="height: 12rem; object-fit: cover; width: 100%"
@@ -2500,9 +605,7 @@
               </a>
               <div class="card-block">
                 <h2 class="card-title h4 serif-font">
-                  <a href="https://seanboe.com/temp_site/stimulatorPart1/"
-                    >Muscle Stimulator Part 1</a
-                  >
+                  <a href="">Muscle Stimulator Part 1</a>
                 </h2>
                 <p class="card-text">
                   This summer, my main goal is figuring out how to make a mobile
@@ -2514,19 +617,6 @@
                     &nbsp; • &nbsp;
 
                     <span class="reading-time"> 10 min read </span>
-
-                    <!-- &nbsp;
-                &#x2022; -->
-
-                    <!-- 185
-
-<a class="d-inline-block social-icon">
-  <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" viewBox="0 20 576 600">
-    <path fill="currentColor" d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"></path>
-  </svg>
-</svg>
-</a> -->
-
                     <div class="clearfix"></div>
                   </div>
                 </div>
@@ -2541,7 +631,7 @@
             <!-- begin post -->
 
             <div class="card">
-              <a href="https://seanboe.com/temp_site/dash/">
+              <a href="">
                 <img
                   class="rounded mb-4"
                   style="height: 12rem; object-fit: cover; width: 100%"
@@ -2563,19 +653,6 @@
                     &nbsp; • &nbsp;
 
                     <span class="reading-time"> 3 min read </span>
-
-                    <!-- &nbsp;
-                &#x2022; -->
-
-                    <!-- 185
-
-<a class="d-inline-block social-icon">
-  <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" viewBox="0 20 576 600">
-    <path fill="currentColor" d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"></path>
-  </svg>
-</svg>
-</a> -->
-
                     <div class="clearfix"></div>
                   </div>
                 </div>
@@ -2590,7 +667,7 @@
             <!-- begin post -->
 
             <div class="card">
-              <a href="https://seanboe.com/temp_site/biomech_1/">
+              <a href="">
                 <img
                   class="rounded mb-4"
                   style="height: 12rem; object-fit: cover; width: 100%"
@@ -2600,9 +677,7 @@
               </a>
               <div class="card-block">
                 <h2 class="card-title h4 serif-font">
-                  <a href="https://seanboe.com/temp_site/biomech_1/"
-                    >Stimulation Control Board</a
-                  >
+                  <a href="">Stimulation Control Board</a>
                 </h2>
                 <p class="card-text">
                   A controller for multichannel muscle stimulation at the
@@ -2614,19 +689,6 @@
                     &nbsp; • &nbsp;
 
                     <span class="reading-time"> 8 min read </span>
-
-                    <!-- &nbsp;
-                &#x2022; -->
-
-                    <!-- 185
-
-<a class="d-inline-block social-icon">
-  <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" fill="currentColor" viewBox="0 20 576 600">
-    <path fill="currentColor" d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"></path>
-  </svg>
-</svg>
-</a> -->
-
                     <div class="clearfix"></div>
                   </div>
                 </div>
@@ -2641,7 +703,7 @@
             <!-- begin post -->
 
             <div class="card">
-              <a href="https://seanboe.com/temp_site/pdb3/">
+              <a href="">
                 <img
                   class="rounded mb-4"
                   style="height: 12rem; object-fit: cover; width: 100%"
@@ -3713,51 +1775,8 @@
     <script src="./Home _ Dat Phi_files/bootstrap.min.js"></script>
     <script src="./Home _ Dat Phi_files/theme.js"></script>
 
-    <!-- <script type="application/javascript" src="http://api.ipify.org?format=jsonp&callback=get_ip"></script> -->
-
     <div id="bbai-shadow-wrapper">
-      <template shadowrootmode="open"
-        ><style>
-          :host {
-            all: initial !important;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-              Helvetica, Arial, sans-serif !important;
-          }
-          * {
-            box-sizing: border-box !important;
-          }
-          .bbai-tooltip {
-            position: fixed !important;
-            z-index: 999999 !important;
-            background: white !important;
-            border-radius: 8px !important;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
-            padding: 8px 12px !important;
-            font-size: 13px !important;
-            line-height: 1.4 !important;
-            color: #1a1a1a !important;
-            pointer-events: all !important;
-            cursor: pointer !important;
-            opacity: 0 !important;
-            visibility: hidden !important;
-            transform: translateY(4px) !important;
-            transition: all 0.2s ease !important;
-          }
-          .bbai-tooltip.show {
-            opacity: 1 !important;
-            visibility: visible !important;
-            transform: translateY(0) !important;
-          }
-          .bbai-tooltip-content {
-            display: flex !important;
-            align-items: center !important;
-            gap: 8px !important;
-            white-space: nowrap !important;
-          }
-          .bbai-tooltip-content span {
-            font-weight: 500 !important;
-          }
-        </style>
+      <template shadowrootmode="open">
         <div class="bbai-tooltip">
           <div class="bbai-tooltip-content">
             <span>Ask AI</span>
@@ -3766,18 +1785,7 @@
       >
     </div>
     <div id="chrome-extension-boilerplate-react-vite-content-view-root">
-      <template shadowrootmode="open"
-        ><style>
-          :host {
-            all: initial; /* Reset styles to avoid inheriting from the host page */
-            font-size: 16px; /* Set the base font size for rem calculations */
-          }
-          *,
-          *::before,
-          *::after {
-            box-sizing: border-box; /* Include padding and border in element's total width/height */
-          }
-        </style>
+      <template shadowrootmode="open">
         <div id="shadow-root">
           <div
             class="fixed z-[9999] dark"
