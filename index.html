@@ -2,31 +2,691 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />`
-    <title>Bootstrap demo</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Dat Phi - Personal Website</title>
+
+    <!-- SEO Meta Tags -->
+    <meta
+      name="description"
+      content="Dat Phi - Personal website showcasing projects, research, and experiences in engineering and technology."
+    />
+    <meta
+      name="keywords"
+      content="Dat Phi, engineering, technology, projects, research"
+    />
+    <meta name="author" content="Dat Phi" />
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Dat Phi - Personal Website" />
+    <meta
+      property="og:description"
+      content="Personal website showcasing projects, research, and experiences in engineering and technology."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://phiquangdat.github.io" />
+
+    <!-- Bootstrap CSS -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous"
     />
+
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Custom CSS -->
+    <link href="styles.css" rel="stylesheet" />
   </head>
+
   <body>
-    <h1>Hello, world!</h1>
-    <script
-      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
-      integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"
-    ></script>
+    <!-- Navigation -->
+    <nav
+      class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm"
+    >
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="#home">
+          <span class="brand-icon me-2">🚀</span>
+          <span class="brand-text">Dat Phi</span>
+        </a>
+
+        <div class="d-flex align-items-center me-3">
+          <a
+            class="social-icon me-3"
+            href="https://github.com/phiquangdat"
+            target="_blank"
+            rel="noopener"
+          >
+            <i class="fab fa-github"></i>
+          </a>
+          <a class="social-icon me-3" href="mailto:datqphi@gmail.com">
+            <i class="fas fa-envelope"></i>
+          </a>
+          <a
+            class="social-icon"
+            href="https://www.linkedin.com/in/phiquangdat/"
+            target="_blank"
+            rel="noopener"
+          >
+            <i class="fab fa-linkedin"></i>
+          </a>
+        </div>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#tags">Tags</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container main-content">
+      <!-- Home Intro -->
+      <div class="home-intro rounded mb-5">
+        <div class="row align-items-center justify-content-between">
+          <div class="col-md-6">
+            <h1 class="font-weight-bold mb-4 serif-font">Dat Phi</h1>
+            <br />
+            <p class="lead mb-4">Hi! I'm Dat. Welcome to my place</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Featured Section -->
+      <h4><i>Featured:</i></h4>
+      <section class="row pt-4">
+        <!-- Featured Post 1 -->
+        <div class="col-md-4 mb-5">
+          <div class="px-2">
+            <div class="card">
+              <a href="#">
+                <div
+                  class="project-placeholder rounded mb-4"
+                  style="height: 12rem; object-fit: cover; width: 100%"
+                >
+                  <i class="fas fa-microchip"></i>
+                </div>
+              </a>
+              <div class="card-block">
+                <h2 class="card-title h4 serif-font">
+                  <a href="#">Motor Control Systems</a>
+                </h2>
+                <p class="card-text">
+                  Advanced motor control and drive systems for various
+                  applications including robotics and automation...
+                </p>
+                <div class="metafooter">
+                  <div class="wrapfooter small d-flex align-items-center">
+                    <span class="post-date">15 Jan 2025</span>
+                    &nbsp; • &nbsp;
+                    <span class="reading-time">8 min read</span>
+                    <div class="clearfix"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Featured Post 2 -->
+        <div class="col-md-4 mb-5">
+          <div class="px-2">
+            <div class="card">
+              <a href="#">
+                <div
+                  class="project-placeholder rounded mb-4"
+                  style="height: 12rem; object-fit: cover; width: 100%"
+                >
+                  <i class="fas fa-robot"></i>
+                </div>
+              </a>
+              <div class="card-block">
+                <h2 class="card-title h4 serif-font">
+                  <a href="#">Robotics & Automation</a>
+                </h2>
+                <p class="card-text">
+                  Development of robotic systems and automation solutions for
+                  industrial and research applications...
+                </p>
+                <div class="metafooter">
+                  <div class="wrapfooter small d-flex align-items-center">
+                    <span class="post-date">10 Dec 2024</span>
+                    &nbsp; • &nbsp;
+                    <span class="reading-time">15 min read</span>
+                    <div class="clearfix"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Featured Post 3 -->
+        <div class="col-md-4 mb-5">
+          <div class="px-2">
+            <div class="card">
+              <a href="#">
+                <div
+                  class="project-placeholder rounded mb-4"
+                  style="height: 12rem; object-fit: cover; width: 100%"
+                >
+                  <i class="fas fa-bolt"></i>
+                </div>
+              </a>
+              <div class="card-block">
+                <h2 class="card-title h4 serif-font">
+                  <a href="#">Power Electronics</a>
+                </h2>
+                <p class="card-text">
+                  Design and implementation of power electronic circuits and
+                  systems for efficient energy conversion...
+                </p>
+                <div class="metafooter">
+                  <div class="wrapfooter small d-flex align-items-center">
+                    <span class="post-date">28 Oct 2024</span>
+                    &nbsp; • &nbsp;
+                    <span class="reading-time">4 min read</span>
+                    <div class="clearfix"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <hr />
+
+      <!-- Posts List -->
+      <section class="row">
+        <!-- Post 1 -->
+        <div class="col-md-4 mb-5">
+          <div class="px-2">
+            <div class="card">
+              <a href="#">
+                <div
+                  class="project-placeholder rounded mb-4"
+                  style="height: 12rem; object-fit: cover; width: 100%"
+                >
+                  <i class="fas fa-cogs"></i>
+                </div>
+              </a>
+              <div class="card-block">
+                <h2 class="card-title h4 serif-font">
+                  <a href="#">Embedded Systems</a>
+                </h2>
+                <p class="card-text">
+                  Custom embedded solutions and firmware development for
+                  specialized applications and IoT devices...
+                </p>
+                <div class="metafooter">
+                  <div class="wrapfooter small d-flex align-items-center">
+                    <span class="post-date">08 Aug 2024</span>
+                    &nbsp; • &nbsp;
+                    <span class="reading-time">2 min read</span>
+                    <div class="clearfix"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Post 2 -->
+        <div class="col-md-4 mb-5">
+          <div class="px-2">
+            <div class="card">
+              <a href="#">
+                <div
+                  class="project-placeholder rounded mb-4"
+                  style="height: 12rem; object-fit: cover; width: 100%"
+                >
+                  <i class="fas fa-code"></i>
+                </div>
+              </a>
+              <div class="card-block">
+                <h2 class="card-title h4 serif-font">
+                  <a href="#">Software Development</a>
+                </h2>
+                <p class="card-text">
+                  Development of software solutions for control systems, data
+                  analysis, and system integration...
+                </p>
+                <div class="metafooter">
+                  <div class="wrapfooter small d-flex align-items-center">
+                    <span class="post-date">10 Jul 2024</span>
+                    &nbsp; • &nbsp;
+                    <span class="reading-time">10 min read</span>
+                    <div class="clearfix"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Post 3 -->
+        <div class="col-md-4 mb-5">
+          <div class="px-2">
+            <div class="card">
+              <a href="#">
+                <div
+                  class="project-placeholder rounded mb-4"
+                  style="height: 12rem; object-fit: cover; width: 100%"
+                >
+                  <i class="fas fa-pcb"></i>
+                </div>
+              </a>
+              <div class="card-block">
+                <h2 class="card-title h4 serif-font">
+                  <a href="#">PCB Design</a>
+                </h2>
+                <p class="card-text">
+                  Custom printed circuit board design and layout for various
+                  electronic applications and prototypes...
+                </p>
+                <div class="metafooter">
+                  <div class="wrapfooter small d-flex align-items-center">
+                    <span class="post-date">22 Mar 2024</span>
+                    &nbsp; • &nbsp;
+                    <span class="reading-time">3 min read</span>
+                    <div class="clearfix"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Post 4 -->
+        <div class="col-md-4 mb-5">
+          <div class="px-2">
+            <div class="card">
+              <a href="#">
+                <div
+                  class="project-placeholder rounded mb-4"
+                  style="height: 12rem; object-fit: cover; width: 100%"
+                >
+                  <i class="fas fa-microchip"></i>
+                </div>
+              </a>
+              <div class="card-block">
+                <h2 class="card-title h4 serif-font">
+                  <a href="#">Control Systems</a>
+                </h2>
+                <p class="card-text">
+                  Advanced control system design and implementation for various
+                  engineering applications...
+                </p>
+                <div class="metafooter">
+                  <div class="wrapfooter small d-flex align-items-center">
+                    <span class="post-date">08 Jul 2023</span>
+                    &nbsp; • &nbsp;
+                    <span class="reading-time">8 min read</span>
+                    <div class="clearfix"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Post 5 -->
+        <div class="col-md-4 mb-5">
+          <div class="px-2">
+            <div class="card">
+              <a href="#">
+                <div
+                  class="project-placeholder rounded mb-4"
+                  style="height: 12rem; object-fit: cover; width: 100%"
+                >
+                  <i class="fas fa-bolt"></i>
+                </div>
+              </a>
+              <div class="card-block">
+                <h2 class="card-title h4 serif-font">
+                  <a href="#">Power Distribution</a>
+                </h2>
+                <p class="card-text">
+                  Designing efficient power distribution systems for
+                  high-performance applications...
+                </p>
+                <div class="metafooter">
+                  <div class="wrapfooter small d-flex align-items-center">
+                    <span class="post-date">16 May 2023</span>
+                    &nbsp; • &nbsp;
+                    <span class="reading-time">1 min read</span>
+                    <div class="clearfix"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Post 6 -->
+        <div class="col-md-4 mb-5">
+          <div class="px-2">
+            <div class="card">
+              <a href="#">
+                <div
+                  class="project-placeholder rounded mb-4"
+                  style="height: 12rem; object-fit: cover; width: 100%"
+                >
+                  <i class="fas fa-cogs"></i>
+                </div>
+              </a>
+              <div class="card-block">
+                <h2 class="card-title h4 serif-font">
+                  <a href="#">System Integration</a>
+                </h2>
+                <p class="card-text">
+                  Integration of various subsystems for complex engineering
+                  projects and applications...
+                </p>
+                <div class="metafooter">
+                  <div class="wrapfooter small d-flex align-items-center">
+                    <span class="post-date">28 Apr 2023</span>
+                    &nbsp; • &nbsp;
+                    <span class="reading-time">5 min read</span>
+                    <div class="clearfix"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Post 7 -->
+        <div class="col-md-4 mb-5">
+          <div class="px-2">
+            <div class="card">
+              <a href="#">
+                <div
+                  class="project-placeholder rounded mb-4"
+                  style="height: 12rem; object-fit: cover; width: 100%"
+                >
+                  <i class="fas fa-robot"></i>
+                </div>
+              </a>
+              <div class="card-block">
+                <h2 class="card-title h4 serif-font">
+                  <a href="#">Quadruped Robotics</a>
+                </h2>
+                <p class="card-block">
+                  Development of quadrupedal robot control systems and
+                  locomotion algorithms...
+                </p>
+                <div class="metafooter">
+                  <div class="wrapfooter small d-flex align-items-center">
+                    <span class="post-date">23 Feb 2023</span>
+                    &nbsp; • &nbsp;
+                    <span class="reading-time">7 min read</span>
+                    <div class="clearfix"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Post 8 -->
+        <div class="col-md-4 mb-5">
+          <div class="px-2">
+            <div class="card">
+              <a href="#">
+                <div
+                  class="project-placeholder rounded mb-4"
+                  style="height: 12rem; object-fit: cover; width: 100%"
+                >
+                  <i class="fas fa-code"></i>
+                </div>
+              </a>
+              <div class="card-block">
+                <h2 class="card-title h4 serif-font">
+                  <a href="#">Python Development</a>
+                </h2>
+                <p class="card-text">
+                  Python-based solutions for data analysis, automation, and
+                  system control...
+                </p>
+                <div class="metafooter">
+                  <div class="wrapfooter small d-flex align-items-center">
+                    <span class="post-date">29 Aug 2022</span>
+                    &nbsp; • &nbsp;
+                    <span class="reading-time">4 min read</span>
+                    <div class="clearfix"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Post 9 -->
+        <div class="col-md-4 mb-5">
+          <div class="px-2">
+            <div class="card">
+              <a href="#">
+                <div
+                  class="project-placeholder rounded mb-4"
+                  style="height: 12rem; object-fit: cover; width: 100%"
+                >
+                  <i class="fas fa-microchip"></i>
+                </div>
+              </a>
+              <div class="card-block">
+                <h2 class="card-title h4 serif-font">
+                  <a href="#">OpenServo Project</a>
+                </h2>
+                <p class="card-text">
+                  Open-source servo motor controller development and
+                  implementation...
+                </p>
+                <div class="metafooter">
+                  <div class="wrapfooter small d-flex align-items-center">
+                    <span class="post-date">26 Jul 2022</span>
+                    &nbsp; • &nbsp;
+                    <span class="reading-time">1 min read</span>
+                    <div class="clearfix"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Post 10 -->
+        <div class="col-md-4 mb-5">
+          <div class="px-2">
+            <div class="card">
+              <a href="#">
+                <div
+                  class="project-placeholder rounded mb-4"
+                  style="height: 12rem; object-fit: cover; width: 100%"
+                >
+                  <i class="fas fa-coffee"></i>
+                </div>
+              </a>
+              <div class="card-block">
+                <h2 class="card-title h4 serif-font">
+                  <a href="#">Coffee & Code</a>
+                </h2>
+                <p class="card-text">
+                  The perfect combination for productive engineering sessions...
+                </p>
+                <div class="metafooter">
+                  <div class="wrapfooter small d-flex align-items-center">
+                    <span class="post-date">22 Jul 2022</span>
+                    &nbsp; • &nbsp;
+                    <span class="reading-time">1 min read</span>
+                    <div class="clearfix"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Post 11 -->
+        <div class="col-md-4 mb-5">
+          <div class="px-2">
+            <div class="card">
+              <a href="#">
+                <div
+                  class="project-placeholder rounded mb-4"
+                  style="height: 12rem; object-fit: cover; width: 100%"
+                >
+                  <i class="fas fa-graduation-cap"></i>
+                </div>
+              </a>
+              <div class="card-block">
+                <h2 class="card-title h4 serif-font">
+                  <a href="#">Summer Learnings</a>
+                </h2>
+                <p class="card-text">
+                  A recap of some things I've been studying and learning...
+                </p>
+                <div class="metafooter">
+                  <div class="wrapfooter small d-flex align-items-center">
+                    <span class="post-date">22 Jul 2022</span>
+                    &nbsp; • &nbsp;
+                    <span class="reading-time">6 min read</span>
+                    <div class="clearfix"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Post 12 -->
+        <div class="col-md-4 mb-5">
+          <div class="px-2">
+            <div class="card">
+              <a href="#">
+                <div
+                  class="project-placeholder rounded mb-4"
+                  style="height: 12rem; object-fit: cover; width: 100%"
+                >
+                  <i class="fas fa-bolt"></i>
+                </div>
+              </a>
+              <div class="card-block">
+                <h2 class="card-title h4 serif-font">
+                  <a href="#">Buck Converter Design</a>
+                </h2>
+                <p class="card-text">
+                  Simple variable buck converter for fun and learning...
+                </p>
+                <div class="metafooter">
+                  <div class="wrapfooter small d-flex align-items-center">
+                    <span class="post-date">18 Jul 2022</span>
+                    &nbsp; • &nbsp;
+                    <span class="reading-time">2 min read</span>
+                    <div class="clearfix"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Pagination -->
+      <div class="bottompagination">
+        <span class="navigation" role="navigation">
+          <nav class="pagination" role="pagination">
+            <span class="page-number d-none">
+              &nbsp; &nbsp; Page 1 of 2 &nbsp; &nbsp;
+            </span>
+            <a class="older-posts" href="#" title="Next Page">Older »</a>
+          </nav>
+        </span>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer container text-center">
+      <ul class="p-0 mb-1 small">
+        <li>
+          <a href="#home" alt="Home" style="text-decoration: none">Home</a>
+        </li>
+        <li>
+          <a
+            href="mailto:datqphi@gmail.com"
+            alt="Contact"
+            style="text-decoration: none"
+            target="_blank"
+            >Contact</a
+          >
+        </li>
+      </ul>
+      <div class="copyright small">
+        © Dat Phi | Made with passion and curiosity
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JS -->
+    <script>
+      // Smooth scrolling for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+        });
+      });
+
+      // Navbar background change on scroll
+      window.addEventListener("scroll", function () {
+        const navbar = document.querySelector(".navbar");
+        if (window.scrollY > 50) {
+          navbar.classList.add("navbar-scrolled");
+        } else {
+          navbar.classList.remove("navbar-scrolled");
+        }
+      });
+    </script>
   </body>
 </html>
