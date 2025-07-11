@@ -34,15 +34,6 @@ phiquangdat.github.io/
 
 ### Personal Information
 
-Update the following in `index.html`:
-
-- **Name**: Change "Dat Phi" to your name throughout the file
-- **Email**: Update `datqphi@gmail.com` with your email
-- **GitHub**: Update GitHub username in the contact section
-- **LinkedIn**: Update LinkedIn profile URL
-- **About Text**: Modify the about section content
-- **Skills**: Update the skill tags in the about section
-
 ### Projects
 
 Replace the project cards with your actual projects:
@@ -126,5 +117,3 @@ Feel free to fork this project and customize it for your own use. If you find an
 - **Inter & Playfair Display**: Font families
 
 ---
-
-Built with ❤️ for showcasing your professional journey.
