@@ -1,80 +1,194 @@
-# Dat Phi - Personal Website
+# Dat Phi - Personal Website (React)
 
-A modern, responsive personal website built with HTML, CSS, and Bootstrap. This website showcases your projects, skills, and professional information in a clean and elegant design.
+A modern, responsive personal website built with React, showcasing projects, research, and experiences in engineering and technology.
 
 ## Features
 
+- **React 18**: Built with the latest React features and hooks
 - **Responsive Design**: Works perfectly on desktop, tablet, and mobile devices
 - **Modern UI**: Clean, professional design with smooth animations
 - **SEO Optimized**: Proper meta tags and semantic HTML structure
-- **Fast Loading**: Optimized CSS and minimal JavaScript
+- **Fast Loading**: Optimized React components and minimal bundle size
 - **Accessible**: WCAG compliant with proper focus states and ARIA labels
 - **Cross-browser Compatible**: Works on all modern browsers
 
-## Structure
+## Project Structure
 
 ```
 phiquangdat.github.io/
-├── index.html          # Main website file
-├── styles.css          # Custom CSS styles
-├── setupTests.js       # Test configuration (if needed)
-└── README.md           # This file
+├── public/
+│   ├── index.html          # Main HTML file
+│   ├── manifest.json       # PWA manifest
+│   └── favicon.ico         # Site icon
+├── src/
+│   ├── components/         # React components
+│   │   ├── Navigation.js   # Navigation bar
+│   │   ├── HomeIntro.js    # Home introduction
+│   │   ├── PostCard.js     # Reusable post card
+│   │   ├── FeaturedPosts.js # Featured posts section
+│   │   ├── PostsList.js    # All posts grid
+│   │   ├── Pagination.js   # Pagination controls
+│   │   ├── Footer.js       # Footer component
+│   │   └── Navigation.css  # Navigation styles
+│   ├── data/
+│   │   └── posts.js        # Post data and content
+│   ├── App.js              # Main App component
+│   ├── App.css             # App-specific styles
+│   ├── index.js            # React entry point
+│   ├── index.css           # Global styles
+│   ├── styles.css          # Main CSS file
+│   └── reportWebVitals.js  # Performance monitoring
+├── package.json            # Dependencies and scripts
+└── README.md              # This file
 ```
 
-## Sections
+## Getting Started
 
-1. **Navigation**: Fixed top navigation with smooth scrolling
-2. **Hero Section**: Introduction with call-to-action buttons
-3. **About Section**: Personal background and skills
-4. **Projects Section**: Showcase of featured projects
-5. **Contact Section**: Contact information and social links
-6. **Footer**: Copyright and additional information
+### Prerequisites
+
+- Node.js (version 14 or higher)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/phiquangdat/phiquangdat.github.io.git
+cd phiquangdat.github.io
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Start the development server:
+
+```bash
+npm start
+```
+
+The app will open in your browser at `http://localhost:3000`.
+
+### Available Scripts
+
+- `npm start` - Runs the app in development mode
+- `npm test` - Launches the test runner
+- `npm run build` - Builds the app for production
+- `npm run eject` - Ejects from Create React App (not recommended)
+
+## Components
+
+### Navigation
+
+- Fixed top navigation with social icons
+- Responsive mobile menu
+- Scroll-based background changes
+
+### HomeIntro
+
+- Simple introduction section
+- Personal branding and welcome message
+
+### PostCard
+
+- Reusable component for displaying posts
+- Consistent styling and hover effects
+- Displays title, description, date, and read time
+
+### FeaturedPosts
+
+- Displays 3 featured posts at the top
+- Uses the same PostCard component
+
+### PostsList
+
+- Grid layout for all posts
+- Responsive design for different screen sizes
+
+### Pagination
+
+- Navigation for additional pages
+- Currently shows "Older" link
+
+### Footer
+
+- Simple footer with links
+- Copyright information
+
+## Data Management
+
+All post data is stored in `src/data/posts.js`:
+
+- `featuredPosts` - Array of 3 featured posts
+- `allPosts` - Array of all regular posts
+
+Each post object contains:
+
+- `id` - Unique identifier
+- `title` - Post title
+- `description` - Post description
+- `date` - Publication date
+- `readTime` - Estimated reading time
+- `icon` - Font Awesome icon class
+- `link` - Post URL (currently "#")
 
 ## Customization
 
 ### Personal Information
 
-### Projects
+Update the following files:
 
-Replace the project cards with your actual projects:
-
-1. Update project titles and descriptions
-2. Replace placeholder icons with relevant Font Awesome icons
-3. Update project tags to match your project technologies
-4. Add links to project repositories or live demos
+- `src/components/Navigation.js` - Name and social links
+- `src/components/HomeIntro.js` - Introduction text
+- `src/components/Footer.js` - Footer content
+- `src/data/posts.js` - All post content
 
 ### Styling
 
-Customize the appearance in `styles.css`:
+- `src/styles.css` - Main styles (imported from original)
+- `src/components/Navigation.css` - Navigation-specific styles
+- `src/App.css` - App-level styles
 
-- **Colors**: Modify CSS custom properties in `:root`
-- **Fonts**: Change Google Fonts imports and font-family declarations
-- **Animations**: Adjust animation timing and effects
-- **Layout**: Modify spacing, padding, and responsive breakpoints
+### Adding New Posts
 
-### Adding Images
-
-To add your profile picture or project images:
-
-1. Create an `images/` folder
-2. Add your images to the folder
-3. Replace placeholder elements with `<img>` tags
-4. Update CSS to style the images appropriately
+1. Add post data to `src/data/posts.js`
+2. Update the arrays as needed
+3. The components will automatically render new posts
 
 ## Deployment
 
-### GitHub Pages (Recommended)
+### GitHub Pages
 
-1. Push your code to a GitHub repository
-2. Go to repository Settings > Pages
-3. Select source branch (usually `main` or `master`)
-4. Your site will be available at `https://username.github.io/repository-name`
+1. Build the project: `npm run build`
+2. Push to GitHub repository
+3. Enable GitHub Pages in repository settings
+4. Set source to `/docs` or `gh-pages` branch
 
-### Other Hosting Options
+### Netlify
 
-- **Netlify**: Drag and drop the folder to deploy
-- **Vercel**: Connect your GitHub repository
-- **Traditional Web Hosting**: Upload files via FTP
+1. Connect your GitHub repository
+2. Set build command: `npm run build`
+3. Set publish directory: `build`
+4. Deploy automatically on push
+
+### Vercel
+
+1. Import your GitHub repository
+2. Vercel will automatically detect React settings
+3. Deploy with zero configuration
+
+## Performance
+
+The React app is optimized for performance:
+
+- Code splitting with React.lazy()
+- Optimized bundle size
+- Web Vitals monitoring
+- Efficient component rendering
+- Minimal re-renders
 
 ## Browser Support
 
@@ -82,15 +196,6 @@ To add your profile picture or project images:
 - Firefox 55+
 - Safari 12+
 - Edge 79+
-
-## Performance
-
-The website is optimized for performance:
-
-- Minimal external dependencies
-- Optimized CSS with CSS custom properties
-- Efficient animations using CSS transforms
-- Responsive images and lazy loading ready
 
 ## Accessibility
 
@@ -111,9 +216,12 @@ Feel free to fork this project and customize it for your own use. If you find an
 
 ## Credits
 
+- **React**: JavaScript library for building user interfaces
 - **Bootstrap**: CSS framework
 - **Font Awesome**: Icons
 - **Google Fonts**: Typography
 - **Inter & Playfair Display**: Font families
 
 ---
+
+Built with ❤️ and React for showcasing your professional journey.
