@@ -9,7 +9,7 @@ const Navigation = ({ isScrolled }) => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
           ? "bg-white/95 backdrop-blur-md shadow-md"
           : "bg-white shadow-sm"
@@ -25,7 +25,7 @@ const Navigation = ({ isScrolled }) => {
             <span className="font-serif">Dat Phi</span>
           </a>
 
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="md:flex items-center space-x-4">
             <a
               className="text-gray-600 hover:text-primary-600 transition-colors"
               href="https://github.com/phiquangdat"
@@ -54,7 +54,7 @@ const Navigation = ({ isScrolled }) => {
           </div>
 
           <button
-            className="md:hidden p-2 rounded-md text-gray-600 hover:text-primary-600 hover:bg-gray-100 transition-colors"
+            className="p-2 rounded-md text-gray-600 hover:text-primary-600 hover:bg-gray-100 transition-colors"
             onClick={toggleMenu}
             aria-label="Toggle navigation"
           >
@@ -76,7 +76,7 @@ const Navigation = ({ isScrolled }) => {
 
         {/* Mobile menu */}
         {isMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 right-0 bg-white shadow-lg border-t">
+          <div className="absolute top-full left-0 right-0 bg-white shadow-lg border-t">
             <div className="px-4 py-2 space-y-1">
               <a
                 className="block px-3 py-2 text-gray-600 hover:text-primary-600 hover:bg-gray-50 rounded-md transition-colors"
