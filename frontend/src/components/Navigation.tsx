@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import NavBar from "./NavBar";
+import { useNavigate } from "react-router-dom";
 
-const Navigation = ({ isScrolled }) => {
+const Navigation = ({ isScrolled }: { isScrolled: boolean }) => {
+  const navigate = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -27,9 +29,24 @@ const Navigation = ({ isScrolled }) => {
           </a>
 
           <div className="md:flex items-center space-x-4 gap-4">
-            <NavBar title="Home" />
-            <NavBar title="Movies" />
-            <NavBar title="Books" />
+            <NavBar
+              title="Home"
+              onClick={() => {
+                navigate("/");
+              }}
+            />
+            <NavBar
+              title="Movies"
+              onClick={() => {
+                navigate("/movies");
+              }}
+            />
+            <NavBar
+              title="Books"
+              onClick={() => {
+                navigate("/books");
+              }}
+            />
           </div>
 
           <div className="md:flex items-center space-x-4 gap-4">
