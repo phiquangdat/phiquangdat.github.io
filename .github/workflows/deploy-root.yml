@@ -26,7 +26,8 @@ jobs:
 
       - name: Copy built output to root
         run: |
-          cp -r frontend/dist/* .
+          rm -rf ./static ./asset-manifest.json ./manifest.json ./index.html
+           cp -r frontend/dist/* .
 
       - name: Commit and push build to main
         run: |
