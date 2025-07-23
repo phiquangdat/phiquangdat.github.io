@@ -1,6 +1,6 @@
 import React from "react";
 
-const PostCard = ({ post }) => {
+const PostCard = ({ post }: { post: any }) => {
   const { title, description, date, readTime, icon, link = "#" } = post;
 
   return (
