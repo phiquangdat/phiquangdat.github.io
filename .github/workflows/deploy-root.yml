@@ -24,14 +24,14 @@ jobs:
       - name: Build
         run: cd frontend && npm run build
 
-      - name: Copy build to root
+      - name: Copy built output to root
         run: |
-          cp -r frontend/build/* .
+          cp -r frontend/dist/* .
 
       - name: Commit and push build to main
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           git add .
-          git commit -m "Deploy build to root for GitHub Pages [skip ci]" || echo "No changes to commit"
+          git commit -m "Deploy Vite build to root for GitHub Pages [skip ci]" || echo "No changes to commit"
           git push origin main
