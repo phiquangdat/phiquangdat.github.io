@@ -1,9 +1,5 @@
 import React, { useState, useEffect } from "react";
-import {
-  getMovies,
-  getFavoriteMovies,
-  getRatedTV,
-} from "../../services/movieApi";
+import { getFavoriteMovies, getRatedTV } from "../../services/movieApi";
 
 export default function MoviePage() {
   const [movies, setMovies] = useState<any[]>([]);
