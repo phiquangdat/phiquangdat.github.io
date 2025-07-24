@@ -28,19 +28,22 @@ export default function MoviePage() {
         common.
       </p>
 
-      <div className="grid grid-cols-2 md:grid-cols-3 items-center justify-center mx-auto px-4 pt-16 w-full gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-3 mx-auto px-4 pt-16 w-full gap-4">
         {movies.map((movie) => (
           <div
             key={movie.id}
-            className="flex flex-col h-1/2 items-center justify-center gap-4"
+            className="flex flex-col items-center justify-between max-w-xs mx-auto gap-4"
           >
             <img
               src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
               alt={movie.title}
-              className="object-cover"
+              className="object-cover w-full h-2/3"
             />
-            <h2>{movie.title}</h2>
-            <p className="text-sm text-gray-500 w-1/2">{movie.overview}</p>
+            <h2 className="mt-2 font-bold">{movie.title}</h2>
+            <p className="text-sm text-gray-500 w-full line-clamp-3">
+              {movie.overview}
+            </p>
+            <span></span>
           </div>
         ))}
         {tv.map((tv) => (
@@ -53,8 +56,8 @@ export default function MoviePage() {
               alt={tv.name}
               className="object-cover"
             />
-            <h2>{tv.name}</h2>
-            <p className="text-sm text-gray-500 w-1/2">{tv.overview}</p>
+            <h2 className="mt-2 font-bold">{tv.name}</h2>
+            <p className="text-sm text-gray-500 line-clamp-3">{tv.overview}</p>
             <div className="flex items-center justify-center gap-2">
               <span className="text-lg text-gray-500 font-bold">
                 My Rating:
