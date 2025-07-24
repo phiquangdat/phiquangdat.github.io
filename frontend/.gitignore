@@ -23,6 +23,7 @@ _site/
 .jekyll-cache/
 .jekyll-metadata
 
+build/
 # Additional Ruby/bundler ignore for when you run: bundle install
 /vendor
 
