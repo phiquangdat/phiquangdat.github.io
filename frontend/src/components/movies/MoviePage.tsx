@@ -26,7 +26,7 @@ export default function MoviePage() {
 
   return (
     <div className="mx-auto px-4 pt-16 text-center">
-      <h1 className="text-center font-bold text-3xl text-[#172554]">
+      <h1 className="text-center font-extrabold text-4xl md:text-5xl text-[#083344] tracking-tight drop-shadow-lg mb-4">
         Movie Page
       </h1>
       <p className="text-center text-gray-500 mt-4">
