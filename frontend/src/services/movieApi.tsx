@@ -23,9 +23,14 @@ const fetchFromTMDB = async (endpoint: string) => {
 };
 
 export const getMovies = async () => {
-  const data = await fetchFromTMDB("/authentication");
-  console.log("Auth data:", data);
-  return data;
+  try {
+    const data = await fetchFromTMDB("/authentication");
+    console.log("Auth data:", data);
+    return data;
+  } catch (error) {
+    console.error("Error fetching movies:", error);
+    return [];
+  }
 };
 
 export const getFavoriteMovies = async () => {
