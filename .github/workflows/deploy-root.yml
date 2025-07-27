@@ -26,7 +26,6 @@ jobs:
 
       - name: Copy built output to root
         run: |
-          # Remove all old build output except source and workflow files
           rm -rf ./assets ./static ./index.html ./manifest.json ./asset-manifest.json
           cp -r frontend/dist/* .
 
