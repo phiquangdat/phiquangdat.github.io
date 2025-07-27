@@ -29,22 +29,37 @@ export const getMovies = async () => {
 };
 
 export const getFavoriteMovies = async () => {
-  const endpoint = `/account/${ACCOUNT_ID}/favorite/movies?language=en-US&page=1&sort_by=created_at.asc`;
-  const data = await fetchFromTMDB(endpoint);
-  console.log("Favorite Movies:", data.results);
-  return data.results;
+  try {
+    const endpoint = `/account/${ACCOUNT_ID}/favorite/movies?language=en-US&page=1&sort_by=created_at.asc`;
+    const data = await fetchFromTMDB(endpoint);
+    console.log("Favorite Movies:", data.results);
+    return data.results || [];
+  } catch (error) {
+    console.error("Error fetching favorite movies:", error);
+    return [];
+  }
 };
 
 export const getRatedMovies = async () => {
-  const endpoint = `/account/${ACCOUNT_ID}/rated/movies?language=en-US&page=1&sort_by=created_at.asc`;
-  const data = await fetchFromTMDB(endpoint);
-  console.log("Rated Movies:", data.results);
-  return data.results;
+  try {
+    const endpoint = `/account/${ACCOUNT_ID}/rated/movies?language=en-US&page=1&sort_by=created_at.asc`;
+    const data = await fetchFromTMDB(endpoint);
+    console.log("Rated Movies:", data.results);
+    return data.results || [];
+  } catch (error) {
+    console.error("Error fetching rated movies:", error);
+    return [];
+  }
 };
 
 export const getRatedTV = async () => {
-  const endpoint = `/account/${ACCOUNT_ID}/rated/tv?language=en-US&page=1&sort_by=created_at.asc`;
-  const data = await fetchFromTMDB(endpoint);
-  console.log("Rated TV Shows:", data.results);
-  return data.results;
+  try {
+    const endpoint = `/account/${ACCOUNT_ID}/rated/tv?language=en-US&page=1&sort_by=created_at.asc`;
+    const data = await fetchFromTMDB(endpoint);
+    console.log("Rated TV Shows:", data.results);
+    return data.results || [];
+  } catch (error) {
+    console.error("Error fetching rated TV shows:", error);
+    return [];
+  }
 };
