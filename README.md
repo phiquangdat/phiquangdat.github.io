@@ -225,3 +225,4 @@ Feel free to fork this project and customize it for your own use. If you find an
 ---
 
 Built with ❤️ and React for showcasing your professional journey.
+ 
