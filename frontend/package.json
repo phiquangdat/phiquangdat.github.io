@@ -28,7 +28,7 @@
     "dev": "vite --port 8010",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "reset": "rm -rf node_modules/ && npm install && npm run dev"
+    "reset": "rm -rf node_modules* && npm install && npm run dev"
   },
   "eslintConfig": {
     "extends": [
