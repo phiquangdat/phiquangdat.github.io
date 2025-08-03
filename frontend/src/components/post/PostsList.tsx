@@ -1,6 +1,6 @@
 import React from "react";
 import PostCard from "./PostCard";
-import { allPosts } from "../data/posts.js";
+import { allPosts } from "../../data/posts.js";
 
 const PostsList = () => {
   return (

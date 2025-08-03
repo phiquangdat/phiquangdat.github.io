@@ -1,6 +1,6 @@
 import React from "react";
 import PostCard from "./PostCard";
-import { featuredPosts } from "../data/posts.js";
+import { featuredPosts } from "../../data/posts.js";
 
 const FeaturedPosts = () => {
   return (

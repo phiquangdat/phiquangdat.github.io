@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import HomeIntro from "./HomeIntro";
-import FeaturedPosts from "./FeaturedPosts";
-import PostsList from "./PostsList";
+import FeaturedPosts from "../post/FeaturedPosts";
+import PostsList from "../post/PostsList";
 import Pagination from "./Pagination";
 import Footer from "./Footer";
-import Navigation from "./Navigation";
+import Navigation from "../navigation/Navigation";
 
 function Home() {
   const [isScrolled, setIsScrolled] = useState(false);
