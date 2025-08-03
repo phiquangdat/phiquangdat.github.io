@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import HomeIntro from "./HomeIntro";
-import FeaturedPosts from "../post/FeaturedPosts";
 import PostsList from "../post/PostsList";
 import Pagination from "./Pagination";
 import Footer from "./Footer";
