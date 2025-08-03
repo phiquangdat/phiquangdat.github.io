@@ -23,7 +23,6 @@ function Home() {
       <Navigation isScrolled={isScrolled} />
       <main className="container mx-auto px-4 pt-16">
         <HomeIntro />
-        <FeaturedPosts />
         <PostsList />
         <Pagination />
       </main>

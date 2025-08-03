@@ -1,6 +1,7 @@
 {
   "name": "dat-phi-website",
   "version": "1.0.0",
+  "type": "module",
   "description": "Dat Phi's personal website built with React and Tailwind CSS",
   "private": true,
   "dependencies": {
@@ -35,6 +36,9 @@
       "react-app",
       "react-app/jest"
     ]
+  },
+  "compilerOptions": {
+    "allowImportingTsExtensions": true
   },
   "browserslist": {
     "production": [

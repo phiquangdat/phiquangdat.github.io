@@ -1,4 +1,4 @@
-export const featuredPosts = [
+export const allPosts = [
   {
     id: 1,
     title: "Motor Control Systems",
@@ -29,9 +29,6 @@ export const featuredPosts = [
     icon: "fas fa-bolt",
     link: "#",
   },
-];
-
-export const allPosts = [
   {
     id: 4,
     title: "Embedded Systems",

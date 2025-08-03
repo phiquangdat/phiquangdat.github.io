@@ -1,16 +1,33 @@
 import React from "react";
 
-const PostCard = ({ post }: { post: any }) => {
+type Post = {
+  title: string;
+  description: string;
+  date: string;
+  readTime: string;
+  icon?: string;
+  link?: string;
+};
+
+type PostCardProps = {
+  post: Post;
+  image: string;
+};
+
+const PostCard: React.FC<PostCardProps> = ({ post, image }) => {
   const { title, description, date, readTime, icon, link = "#" } = post;
 
   return (
     <div className="mb-8">
       <div className="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden h-full">
         <a href={link} className="block">
-          <div className="h-48 bg-gradient-to-br from-primary-500 to-accent-500 flex items-center justify-center">
-            <i className={`${icon} text-4xl text-white`}></i>
-          </div>
+          <img
+            src={image}
+            alt={`Image for ${title}`}
+            className="w-full h-full object-cover"
+          />
         </a>
+
         <div className="p-6">
           <h2 className="text-xl font-bold text-gray-800 mb-3 font-serif">
             <a href={link} className="hover:text-primary-600 transition-colors">
