@@ -31,10 +31,12 @@ export default function MoviePage() {
         setMovies(moviesData || []);
         setTv(tvData || []);
       } catch (err) {
-        console.error("Error fetching data:", err);
-        setError("Failed to load movies and TV shows");
-        setMovies([]);
-        setTv([]);
+        if (err instanceof Error && err.message.includes("404")) {
+          console.error("Error fetching data:", err);
+          setError("Failed to load movies and TV shows");
+          setMovies([]);
+          setTv([]);
+        }
       } finally {
         setLoading(false);
       }
@@ -42,28 +44,6 @@ export default function MoviePage() {
 
     fetchData();
   }, []);
-
-  if (loading) {
-    return (
-      <div className="mx-auto px-4 pt-16 text-center">
-        <h1 className="text-center font-extrabold text-4xl md:text-5xl text-[#083344] tracking-tight drop-shadow-lg mb-4">
-          Movie Page
-        </h1>
-        <p className="text-center text-gray-500 mt-4">Loading...</p>
-      </div>
-    );
-  }
-
-  if (error) {
-    return (
-      <div className="mx-auto px-4 pt-16 text-center">
-        <h1 className="text-center font-extrabold text-4xl md:text-5xl text-[#083344] tracking-tight drop-shadow-lg mb-4">
-          Movie Page
-        </h1>
-        <p className="text-center text-red-500 mt-4">{error}</p>
-      </div>
-    );
-  }
 
   return (
     <div className="mx-auto px-4 pt-16 text-center">
@@ -75,6 +55,14 @@ export default function MoviePage() {
         common.
       </p>
 
+      {loading && (
+        <p className="col-span-full text-center text-gray-500 mt-4">
+          Loading...
+        </p>
+      )}
+      {error && (
+        <p className="col-span-full text-center text-red-500 mt-4">{error}</p>
+      )}
       <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 gap-8 mx-auto px-4 pt-16 w-full">
         {movies &&
           movies.length > 0 &&
@@ -82,11 +70,6 @@ export default function MoviePage() {
         {tv &&
           tv.length > 0 &&
           tv.map((tv) => <MovieCard movie={tv} key={tv.id} />)}
-        {(!movies || movies.length === 0) && (!tv || tv.length === 0) && (
-          <div className="col-span-full text-center text-gray-500">
-            No movies or TV shows found.
-          </div>
-        )}
       </div>
     </div>
   );
