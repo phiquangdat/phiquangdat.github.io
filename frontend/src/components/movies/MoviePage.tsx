@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { getFavoriteMovies, getRatedTV } from "../../services/movieApi";
 import MovieCard from "./MovieCard";
+import { ArrowLeft } from "lucide-react";
 
 export interface Movie {
   id: number;
@@ -46,7 +47,16 @@ export default function MoviePage() {
   }, []);
 
   return (
-    <div className="mx-auto px-4 pt-16 text-center">
+    <div className="mx-auto px-4 pt-16">
+      <a
+        href="/"
+        className="inline-flex justify-center items-center px-4 py-2 rounded hover:bg-gray-300 transition-colors"
+      >
+        <ArrowLeft className="w-4 h-4 mr-1" />
+        <span className="text-gray-600 transition-colors font-medium">
+          Back to Home
+        </span>
+      </a>
       <h1 className="text-center font-extrabold text-4xl md:text-5xl text-[#083344] tracking-tight drop-shadow-lg mb-4">
         Movie Page
       </h1>
