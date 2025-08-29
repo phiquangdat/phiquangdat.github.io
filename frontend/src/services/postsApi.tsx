@@ -1,0 +1,25 @@
+import { supabase } from "../supaClient";
+
+export interface Post {
+  id: number;
+  title: string;
+  description: string;
+  date: string;
+  readTime: string;
+  icon: string;
+  link: string;
+}
+
+export async function getPosts(): Promise<Post[]> {
+  const { data, error } = await supabase
+    .from("posts")
+    .select("*")
+    .order("date", { ascending: false });
+
+  if (error) {
+    console.error("Error fetching posts:", error);
+    throw new Error(`Failed to fetch posts: ${error.message}`);
+  }
+
+  return data as Post[];
+}
