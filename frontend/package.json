@@ -4,6 +4,7 @@
   "type": "module",
   "description": "Dat Phi's personal website built with React and Tailwind CSS",
   "private": true,
+  "homepage": "https://phiquangdat.github.io",
   "dependencies": {
     "@fortawesome/react-fontawesome": "^0.2.3",
     "@supabase/supabase-js": "^2.46.1",
@@ -29,15 +30,17 @@
     "eslint": "^8.57.1",
     "eslint-plugin-react": "^7.37.1",
     "eslint-plugin-react-hooks": "^4.6.2",
-    "eslint-plugin-jest": "^28.8.3"
+    "eslint-plugin-jest": "^28.8.3",
+    "gh-pages": "^6.2.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "tsc -b && vite build",
     "dev": "vite --port 8010",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "reset": "rm -rf node_modules* && npm install && npm run dev"
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "test": "vitest",
+    "reset": "rm -rf node_modules dist && npm install && npm run dev",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "eslintConfig": {
     "env": {
