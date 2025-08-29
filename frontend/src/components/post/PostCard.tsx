@@ -1,13 +1,5 @@
 import React from "react";
-
-type Post = {
-  title: string;
-  description: string;
-  date: string;
-  readTime: string;
-  icon?: string;
-  link?: string;
-};
+import type { Post } from "../../services/postsApi";
 
 type PostCardProps = {
   post: Post;
@@ -15,15 +7,16 @@ type PostCardProps = {
 };
 
 const PostCard: React.FC<PostCardProps> = ({ post }) => {
-  const { title, description, date, readTime, icon, link = "#" } = post;
+  const { title, description, date, readTime, image_url } = post;
 
   return (
     <div className="mb-8">
       <div className="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden h-full">
         <a className="block">
           <img
+            src={image_url}
             alt={`Image for ${title}`}
-            className="w-full h-48 object-cover"
+            className="w-full h-48 object-cover rounded-md mb-4"
           />
         </a>
 

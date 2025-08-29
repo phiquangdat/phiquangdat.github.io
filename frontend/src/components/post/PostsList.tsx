@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useCallback } from "react";
 import PostCard from "./PostCard";
-import { allPosts } from "../../data/posts.js";
 import { getPosts, type Post } from "../../services/postsApi";
 import { imageList } from "../../utils/generateImageList";
 const PostsList = () => {
