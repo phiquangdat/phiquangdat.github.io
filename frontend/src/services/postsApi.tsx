@@ -1,4 +1,4 @@
-import { supabase } from "../supaClient";
+import { supabase } from '../supaClient';
 
 export interface Post {
   id: number;
@@ -12,12 +12,12 @@ export interface Post {
 
 export async function getPosts(): Promise<Post[]> {
   const { data, error } = await supabase
-    .from("posts")
-    .select("*")
-    .order("date", { ascending: false });
+    .from('posts')
+    .select('*')
+    .order('date', { ascending: false });
 
   if (error) {
-    console.error("Error fetching posts:", error);
+    console.error('Error fetching posts:', error);
     throw new Error(`Failed to fetch posts: ${error.message}`);
   }
 

@@ -11,10 +11,10 @@ type Post = {
 
 type PostCardProps = {
   post: Post;
-  image: string;
+  image?: string;
 };
 
-const PostCard: React.FC<PostCardProps> = ({ post, image }) => {
+const PostCard: React.FC<PostCardProps> = ({ post }) => {
   const { title, description, date, readTime, icon, link = "#" } = post;
 
   return (
@@ -22,7 +22,6 @@ const PostCard: React.FC<PostCardProps> = ({ post, image }) => {
       <div className="bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden h-full">
         <a className="block">
           <img
-            src={image}
             alt={`Image for ${title}`}
             className="w-full h-48 object-cover"
           />
