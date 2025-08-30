@@ -1,13 +1,25 @@
 import React from "react";
 
-const Pagination = () => {
+type PaginationProps = {
+  page: number;
+  totalPage: number;
+  setPage: (page: number) => void;
+};
+
+const Pagination = ({ page, totalPage, setPage }: PaginationProps) => {
+  const handleNext = () => {
+    setPage(page - 1);
+  };
+
   return (
-    <div className="text-center mt-12">
+    <div className="flex items-center justify-center">
       <nav className="inline-flex items-center">
-        <span className="text-sm text-gray-500 mr-4">Page 1 of 2</span>
+        <span className="text-sm text-gray-500 mr-4">
+          Page {page} of {totalPage}
+        </span>
         <button
           className="text-primary-600 hover:text-primary-700 font-medium transition-colors"
-          onClick={() => console.log("Navigate to older posts")}
+          onClick={handleNext}
         >
           Older »
         </button>

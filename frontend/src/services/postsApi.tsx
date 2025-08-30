@@ -10,16 +10,23 @@ export interface Post {
   image_url?: string;
 }
 
-export async function getPosts(): Promise<Post[]> {
-  const { data, error } = await supabase
+export async function getPosts(
+  page: number = 1,
+  perPage: number = 6
+): Promise<{ data: Post[]; total: number }> {
+  const from = (page - 1) * perPage;
+  const to = from + perPage - 1;
+
+  const { data, error, count } = await supabase
     .from("posts")
-    .select("*")
-    .order("date", { ascending: false });
+    .select("*", { count: "exact" })
+    .order("date", { ascending: false })
+    .range(from, to);
 
   if (error) {
     console.error("Error fetching posts:", error);
     throw new Error(`Failed to fetch posts: ${error.message}`);
   }
 
-  return data as Post[];
+  return { data: data as Post[], total: count || 0 };
 }

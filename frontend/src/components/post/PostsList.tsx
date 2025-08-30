@@ -1,30 +1,32 @@
 import React, { useEffect, useState } from "react";
-import { useCallback } from "react";
 import PostCard from "./PostCard";
 import { getPosts, type Post } from "../../services/postsApi";
-import { imageList } from "../../utils/generateImageList";
+import Pagination from "../home/Pagination";
 const PostsList = () => {
   const [data, setData] = useState<Post[]>([]);
+  const [page, setPage] = useState(1);
+  const [totalPage, setTotalPage] = useState(1);
 
   useEffect(() => {
     async function fetchData() {
-      const response = await getPosts();
+      const { data: post, total } = await getPosts(1, 2);
 
-      setData(response);
+      setData(post);
+      setTotalPage(total);
     }
 
     fetchData();
   });
-  const getRandomImage = useCallback(() => {
-    return imageList[Math.floor(Math.random() * imageList.length)];
-  }, []);
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {data.map((post: any) => (
-        <PostCard key={post.id} post={post} />
-      ))}
-    </div>
+    <p>
+      <div className="mt-8 grid grid-cols-3 gap-10">
+        {data.map((post: any) => (
+          <PostCard key={post.id} post={post} />
+        ))}
+      </div>
+      <Pagination page={1} totalPage={totalPage} setPage={setPage} />
+    </p>
   );
 };
 

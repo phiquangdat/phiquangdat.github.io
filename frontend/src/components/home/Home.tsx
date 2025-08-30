@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import HomeIntro from "./HomeIntro";
 import PostsList from "../post/PostsList";
-import Pagination from "./Pagination";
 import Footer from "./Footer";
 import Navigation from "../navigation/Navigation";
 
@@ -18,12 +17,11 @@ function Home() {
   }, []);
 
   return (
-    <div className="App">
+    <div className="">
       <Navigation isScrolled={isScrolled} />
       <main className="container mx-auto px-4 pt-16">
         <HomeIntro />
         <PostsList />
-        <Pagination />
       </main>
       <Footer />
     </div>
