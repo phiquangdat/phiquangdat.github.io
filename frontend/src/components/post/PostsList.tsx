@@ -9,7 +9,7 @@ const PostsList = () => {
 
   useEffect(() => {
     async function fetchData() {
-      const { data: post, total } = await getPosts(1, 2);
+      const { data: post, total } = await getPosts(1, 6);
 
       setData(post);
       setTotalPage(total);
