@@ -6,7 +6,7 @@ type PostCardProps = {
   image?: string;
 };
 
-const PostCard: React.FC<PostCardProps> = ({ post }) => {
+const PostCard: React.FC<PostCardProps> = React.memo(({ post }) => {
   const { title, description, date, readTime, image_url } = post;
 
   return (
@@ -36,6 +36,6 @@ const PostCard: React.FC<PostCardProps> = ({ post }) => {
       </div>
     </div>
   );
-};
+});
 
 export default PostCard;

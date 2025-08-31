@@ -6,17 +6,18 @@ const PostsList = () => {
   const [data, setData] = useState<Post[]>([]);
   const [page, setPage] = useState(1);
   const [totalPage, setTotalPage] = useState(1);
+  const perPage = 2;
 
   useEffect(() => {
     async function fetchData() {
-      const { data: post, total } = await getPosts(1, 6);
+      const { data: post, total } = await getPosts(page, perPage);
 
       setData(post);
-      setTotalPage(total);
+      setTotalPage(Math.ceil(total / perPage));
     }
 
     fetchData();
-  });
+  }, [page, data]);
 
   return (
     <p>
@@ -25,7 +26,7 @@ const PostsList = () => {
           <PostCard key={post.id} post={post} />
         ))}
       </div>
-      <Pagination page={1} totalPage={totalPage} setPage={setPage} />
+      <Pagination page={page} totalPage={totalPage} setPage={setPage} />
     </p>
   );
 };

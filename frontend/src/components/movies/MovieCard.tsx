@@ -6,7 +6,7 @@ export default function MovieCard({ movie }: { movie: Movie }) {
       <img
         src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
         alt={movie.title}
-        className="object-cover mx-auto w-full h-80 rounded-md mb-4 transition-all duration-300"
+        className="object-contain mx-auto w-full h-80 rounded-md mb-4 transition-all duration-300"
       />
       <h2 className="font-bold text-lg mb-2">{movie.title || movie.name}</h2>
       <p className="text-sm text-gray-500 line-clamp-3 mb-2">
