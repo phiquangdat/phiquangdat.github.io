@@ -10,7 +10,7 @@ const PostsList = () => {
 
   useEffect(() => {
     async function fetchData() {
-      const { data: post, total } = await getPosts(page, perPage);
+      const { data: post, total } = await getPosts();
 
       setData(post);
       setTotalPage(Math.ceil(total / perPage));
@@ -19,15 +19,20 @@ const PostsList = () => {
     fetchData();
   }, [page, data]);
 
+  const startIndex = (page - 1) * perPage;
+  const filteredPost = data.slice(startIndex, startIndex + perPage);
   return (
-    <p>
-      <div className="mt-8 grid grid-cols-3 gap-10">
-        {data.map((post: any) => (
+    <>
+      <div>
+        <h2 className="text-2xl font-semibold">Projects</h2>
+      </div>
+      <div className="grid grid-cols-3 gap-10">
+        {filteredPost.map((post: any) => (
           <PostCard key={post.id} post={post} />
         ))}
       </div>
       <Pagination page={page} totalPage={totalPage} setPage={setPage} />
-    </p>
+    </>
   );
 };
 

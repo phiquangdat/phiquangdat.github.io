@@ -10,18 +10,11 @@ export interface Post {
   image_url?: string;
 }
 
-export async function getPosts(
-  page: number = 1,
-  perPage: number = 6
-): Promise<{ data: Post[]; total: number }> {
-  const from = (page - 1) * perPage;
-  const to = from + perPage - 1;
-
+export async function getPosts(): Promise<{ data: Post[]; total: number }> {
   const { data, error, count } = await supabase
     .from("posts")
     .select("*", { count: "exact" })
-    .order("date", { ascending: false })
-    .range(from, to);
+    .order("date", { ascending: false });
 
   if (error) {
     console.error("Error fetching posts:", error);
