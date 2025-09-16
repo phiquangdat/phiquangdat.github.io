@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import PostCard from "./PostCard";
 import { getPosts, type Post } from "../../services/postsApi";
-import Pagination from "../home/Pagination";
+import Pagination from "../navigation/Pagination";
 const PostsList = () => {
   const [data, setData] = useState<Post[]>([]);
   const [page, setPage] = useState(1);
   const [totalPage, setTotalPage] = useState(1);
-  const perPage = 2;
+  const perPage = 3;
 
   useEffect(() => {
     async function fetchData() {
