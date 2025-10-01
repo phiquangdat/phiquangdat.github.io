@@ -1,8 +1,36 @@
 {
+  "name": "phiquangdat-portfolio",
+  "version": "1.0.0",
+  "description": "Personal portfolio website with movie database integration",
+  "scripts": {
+    "dev": "cd frontend && npm run dev",
+    "build": "cd frontend && npm run build",
+    "preview": "cd frontend && npm run preview",
+    "install-deps": "cd frontend && npm install",
+    "security-check": "./scripts/security-check.sh",
+    "gitleaks": "gitleaks detect --config .gitleaks.toml --source . --report-format json --report-path gitleaks-report.json",
+    "clean": "rm -rf assets/ dist/ build/ && find . -name '*.log' -delete"
+  },
+  "keywords": [
+    "portfolio",
+    "react",
+    "vite",
+    "movies",
+    "tmdb"
+  ],
+  "author": "phiquangdat",
+  "license": "MIT",
   "dependencies": {
     "@supabase/supabase-js": "^2.56.0",
     "dotenv": "^17.2.1",
     "lucide": "^0.540.0",
     "lucide-react": "^0.540.0"
+  },
+  "devDependencies": {
+    "gitleaks": "^8.18.0"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
   }
 }
