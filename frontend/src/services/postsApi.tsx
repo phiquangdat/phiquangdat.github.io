@@ -1,6 +1,5 @@
-import { supabase } from "../supaClient";
-
 export interface Post {
+  id?: number;
   title: string;
   description: string;
   date: string;
@@ -8,18 +7,123 @@ export interface Post {
   icon?: string;
   link?: string;
   image_url?: string;
+  created_at?: string;
 }
 
+const API_BASE_URL =
+  import.meta.env.VITE_API_URL || "http://localhost:3001/api";
+
 export async function getPosts(): Promise<{ data: Post[]; total: number }> {
-  const { data, error, count } = await supabase
-    .from("posts")
-    .select("*", { count: "exact" })
-    .order("date", { ascending: false });
+  try {
+    const response = await fetch(`${API_BASE_URL}/posts`);
 
-  if (error) {
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    const result = await response.json();
+    return result;
+  } catch (error) {
     console.error("Error fetching posts:", error);
-    throw new Error(`Failed to fetch posts: ${error.message}`);
+    throw new Error(
+      `Failed to fetch posts: ${
+        error instanceof Error ? error.message : "Unknown error"
+      }`
+    );
   }
+}
 
-  return { data: data as Post[], total: count || 0 };
+export async function getPost(id: number): Promise<Post> {
+  try {
+    const response = await fetch(`${API_BASE_URL}/posts/${id}`);
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    return await response.json();
+  } catch (error) {
+    console.error("Error fetching post:", error);
+    throw new Error(
+      `Failed to fetch post: ${
+        error instanceof Error ? error.message : "Unknown error"
+      }`
+    );
+  }
+}
+
+export async function createPost(
+  post: Omit<Post, "id" | "created_at">
+): Promise<{ id: number; message: string }> {
+  try {
+    const response = await fetch(`${API_BASE_URL}/posts`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(post),
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    return await response.json();
+  } catch (error) {
+    console.error("Error creating post:", error);
+    throw new Error(
+      `Failed to create post: ${
+        error instanceof Error ? error.message : "Unknown error"
+      }`
+    );
+  }
+}
+
+export async function updatePost(
+  id: number,
+  post: Partial<Post>
+): Promise<{ message: string }> {
+  try {
+    const response = await fetch(`${API_BASE_URL}/posts/${id}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(post),
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    return await response.json();
+  } catch (error) {
+    console.error("Error updating post:", error);
+    throw new Error(
+      `Failed to update post: ${
+        error instanceof Error ? error.message : "Unknown error"
+      }`
+    );
+  }
+}
+
+export async function deletePost(id: number): Promise<{ message: string }> {
+  try {
+    const response = await fetch(`${API_BASE_URL}/posts/${id}`, {
+      method: "DELETE",
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
+    return await response.json();
+  } catch (error) {
+    console.error("Error deleting post:", error);
+    throw new Error(
+      `Failed to delete post: ${
+        error instanceof Error ? error.message : "Unknown error"
+      }`
+    );
+  }
 }

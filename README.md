@@ -1,10 +1,13 @@
-# Dat Phi - Personal Website (React)
+# Dat Phi - Personal Website (React + Backend)
 
-A modern, responsive personal website built with React, showcasing projects, research, and experiences in engineering and technology.
+A modern, responsive personal website built with React and Express.js backend, showcasing projects, research, and experiences in engineering and technology. Previously used Supabase, now converted to a local backend solution.
 
 ## Features
 
 - **React 18**: Built with the latest React features and hooks
+- **Express.js Backend**: Local API server replacing Supabase
+- **SQLite Database**: Local database for posts storage
+- **RESTful API**: Complete CRUD operations for posts
 - **Responsive Design**: Works perfectly on desktop, tablet, and mobile devices
 - **Modern UI**: Clean, professional design with smooth animations
 - **SEO Optimized**: Proper meta tags and semantic HTML structure
@@ -16,29 +19,22 @@ A modern, responsive personal website built with React, showcasing projects, res
 
 ```
 phiquangdat.github.io/
-├── public/
-│   ├── index.html          # Main HTML file
-│   ├── manifest.json       # PWA manifest
-│   └── favicon.ico         # Site icon
-├── src/
-│   ├── components/         # React components
-│   │   ├── Navigation.js   # Navigation bar
-│   │   ├── HomeIntro.js    # Home introduction
-│   │   ├── PostCard.js     # Reusable post card
-│   │   ├── FeaturedPosts.js # Featured posts section
-│   │   ├── PostsList.js    # All posts grid
-│   │   ├── Pagination.js   # Pagination controls
-│   │   ├── Footer.js       # Footer component
-│   │   └── Navigation.css  # Navigation styles
-│   ├── data/
-│   │   └── posts.js        # Post data and content
-│   ├── App.js              # Main App component
-│   ├── App.css             # App-specific styles
-│   ├── index.js            # React entry point
-│   ├── index.css           # Global styles
-│   ├── styles.css          # Main CSS file
-│   └── reportWebVitals.js  # Performance monitoring
-├── package.json            # Dependencies and scripts
+├── frontend/               # React frontend application
+│   ├── src/
+│   │   ├── components/     # React components
+│   │   ├── services/       # API service functions
+│   │   ├── routes/         # Routing configuration
+│   │   └── utils/          # Utility functions
+│   ├── public/             # Static assets
+│   └── package.json        # Frontend dependencies
+├── backend/                # Express.js backend API
+│   ├── server.js           # Main server file
+│   ├── scripts/
+│   │   └── init-db.js      # Database initialization
+│   ├── package.json        # Backend dependencies
+│   └── README.md          # Backend documentation
+├── scripts/                # Utility scripts
+├── package.json            # Root package.json with scripts
 └── README.md              # This file
 ```
 
@@ -58,26 +54,36 @@ git clone https://github.com/phiquangdat/phiquangdat.github.io.git
 cd phiquangdat.github.io
 ```
 
-2. Install dependencies:
+2. Install all dependencies (frontend and backend):
 
 ```bash
-npm install
+npm run install-deps
 ```
 
-3. Start the development server:
+3. Initialize the database with sample data:
 
 ```bash
-npm start
+npm run init-db
 ```
 
-The app will open in your browser at `http://localhost:3000`.
+4. Start both frontend and backend servers:
+
+```bash
+npm run dev:full
+```
+
+- Frontend will be available at `http://localhost:8010`
+- Backend API will be available at `http://localhost:3001`
 
 ### Available Scripts
 
-- `npm start` - Runs the app in development mode
-- `npm test` - Launches the test runner
-- `npm run build` - Builds the app for production
-- `npm run eject` - Ejects from Create React App (not recommended)
+- `npm run dev` - Runs only the frontend in development mode
+- `npm run dev:backend` - Runs only the backend server
+- `npm run dev:full` - Runs both frontend and backend simultaneously
+- `npm run build` - Builds the frontend for production
+- `npm run preview` - Preview the production build
+- `npm run init-db` - Initialize database with sample data
+- `npm run install-deps` - Install dependencies for both frontend and backend
 
 ## Components
 
@@ -225,4 +231,3 @@ Feel free to fork this project and customize it for your own use. If you find an
 ---
 
 Built with ❤️ and React for showcasing your professional journey.
- 
