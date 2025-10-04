@@ -5,7 +5,7 @@ WORKDIR /app
 COPY pom.xml ./
 COPY src ./src
 
-RUN mvn clean package -DskipTests
+RUN ./mvnw clean package -DskipTests
 
 FROM openjdk:24-jdk-slim AS runtime
 
