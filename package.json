@@ -4,12 +4,8 @@
   "description": "Personal portfolio website with movie database integration",
   "scripts": {
     "dev": "cd frontend && npm run dev",
-    "dev:backend": "cd backend && npm run dev",
-    "dev:full": "concurrently \"npm run dev:backend\" \"npm run dev\"",
     "build": "cd frontend && npm run build",
     "preview": "cd frontend && npm run preview",
-    "install-deps": "cd frontend && npm install && cd ../backend && npm install",
-    "init-db": "cd backend && npm run init-db",
     "security-check": "./scripts/security-check.sh",
     "gitleaks": "gitleaks detect --config .gitleaks.toml --source . --report-format json --report-path gitleaks-report.json",
     "clean": "rm -rf assets/ dist/ build/ && find . -name '*.log' -delete"
