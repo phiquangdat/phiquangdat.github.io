@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import io.github.phiquangdat.portfolio.model.Posts;
@@ -34,6 +35,11 @@ public class PostsController {
     public ResponseEntity<List<Posts>> getPosts() {
         List<Posts> posts = postsRepository.findAll();
         return ResponseEntity.ok(posts);
+    }
+
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public ResponseEntity<String> root() {
+        return ResponseEntity.ok("Portfolio Backend API is running! Available endpoints: /api/posts");
     }
 
     @GetMapping("/{id}")
