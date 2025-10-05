@@ -6,7 +6,7 @@ export interface Post {
   readTime: string;
   icon?: string;
   link?: string;
-  image_url?: string;
+  imageUrl?: string;
   created_at?: string;
 }
 
@@ -20,8 +20,11 @@ export async function getPosts(): Promise<{ data: Post[]; total: number }> {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
 
-    const result = await response.json();
-    return result;
+    const posts = await response.json();
+    return {
+      data: posts,
+      total: posts.length,
+    };
   } catch (error) {
     console.error("Error fetching posts:", error);
     throw new Error(
@@ -53,7 +56,7 @@ export async function getPost(id: number): Promise<Post> {
 
 export async function createPost(
   post: Omit<Post, "id" | "created_at">
-): Promise<{ id: number; message: string }> {
+): Promise<Post> {
   try {
     const response = await fetch(`${API_BASE_URL}/posts`, {
       method: "POST",
@@ -81,7 +84,7 @@ export async function createPost(
 export async function updatePost(
   id: number,
   post: Partial<Post>
-): Promise<{ message: string }> {
+): Promise<Post> {
   try {
     const response = await fetch(`${API_BASE_URL}/posts/${id}`, {
       method: "PUT",
@@ -106,7 +109,7 @@ export async function updatePost(
   }
 }
 
-export async function deletePost(id: number): Promise<{ message: string }> {
+export async function deletePost(id: number): Promise<void> {
   try {
     const response = await fetch(`${API_BASE_URL}/posts/${id}`, {
       method: "DELETE",
@@ -115,8 +118,6 @@ export async function deletePost(id: number): Promise<{ message: string }> {
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
-
-    return await response.json();
   } catch (error) {
     console.error("Error deleting post:", error);
     throw new Error(

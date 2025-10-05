@@ -2,7 +2,6 @@ package io.github.phiquangdat.portfolio.controller;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -43,7 +42,7 @@ public class PostsController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Posts> getPost(@PathVariable UUID id) {
+    public ResponseEntity<Posts> getPost(@PathVariable Long id) {
         Optional<Posts> post = postsRepository.findById(id);
         return post.map(ResponseEntity::ok).orElse(ResponseEntity.notFound().build());
     }
@@ -55,7 +54,7 @@ public class PostsController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Posts> updatePost(@PathVariable UUID id, @RequestBody Posts postDetails) {
+    public ResponseEntity<Posts> updatePost(@PathVariable Long id, @RequestBody Posts postDetails) {
         Optional<Posts> optionalPost = postsRepository.findById(id);
         if (optionalPost.isPresent()) {
             Posts post = optionalPost.get();
@@ -75,7 +74,7 @@ public class PostsController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deletePost(@PathVariable UUID id) {
+    public ResponseEntity<Void> deletePost(@PathVariable Long id) {
         if (postsRepository.existsById(id)) {
             postsRepository.deleteById(id);
             return ResponseEntity.ok().build();

@@ -7,14 +7,14 @@ type PostCardProps = {
 };
 
 const PostCard: React.FC<PostCardProps> = React.memo(({ post }) => {
-  const { title, description, date, readTime, link, image_url } = post;
+  const { title, description, date, readTime, link, imageUrl } = post;
 
   return (
     <div className="my-8 w-400px">
       <div className="bg-white border rounded-lg shadow-sm hover:shadow-md transition-shadow duration-300 overflow-hidden h-full">
         <a className="block">
           <img
-            src={image_url}
+            src={imageUrl}
             alt={`Image for ${title}`}
             className="border-b w-full h-48 object-contain rounded-b-none rounded-md mb-4"
           />
