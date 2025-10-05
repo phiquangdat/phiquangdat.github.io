@@ -1,7 +1,13 @@
 package io.github.phiquangdat.portfolio.model;
 
-import jakarta.persistence.*;
 import java.util.UUID;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "posts")
@@ -24,20 +30,20 @@ public class Posts {
 
     private String link;
 
-    private String image_url;
+    private String imageUrl;
 
     // Default constructor
     public Posts() {}
 
     // Constructor with parameters
-    public Posts(String title, String description, String date, String readTime, String icon, String link, String image_url) {
+    public Posts(String title, String description, String date, String readTime, String icon, String link, String imageUrl) {
         this.title = title;
         this.description = description;
         this.date = date;
         this.readTime = readTime;
         this.icon = icon;
         this.link = link;
-        this.image_url = image_url;
+        this.imageUrl = imageUrl;
     }
 
     // Getters and Setters
@@ -97,11 +103,11 @@ public class Posts {
         this.link = link;
     }
 
-    public String getImage_url() {
-        return image_url;
+    public String getImageUrl() {
+        return imageUrl;
     }
 
-    public void setImage_url(String image_url) {
-        this.image_url = image_url;
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 }

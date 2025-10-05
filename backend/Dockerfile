@@ -1,13 +1,13 @@
-FROM maven:3.9.6-openjdk-24-slim AS build
+FROM maven:3.8-openjdk-11-slim AS build
 
 WORKDIR /app
 
 COPY pom.xml ./
 COPY src ./src
 
-RUN ./mvnw clean package -DskipTests
+RUN mvn clean package -DskipTests
 
-FROM openjdk:24-jdk-slim AS runtime
+FROM openjdk:11-jdk-slim AS runtime
 
 WORKDIR /app
 
