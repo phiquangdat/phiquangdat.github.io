@@ -1,5 +1,5 @@
 const BASE_URL = "https://api.themoviedb.org/3";
-const ACCOUNT_ID = "22169631";
+const ACCOUNT_ID = import.meta.env.VITE_ACCOUNT_ID;
 const API_TOKEN = import.meta.env.VITE_TMDB_API_TOKEN;
 
 const fetchFromTMDB = async (endpoint: string) => {
