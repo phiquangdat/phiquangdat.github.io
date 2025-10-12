@@ -2,11 +2,17 @@ import React, { useEffect, useState } from "react";
 import PostCard from "./PostCard";
 import { getPosts, type Post } from "../../services/postsApi";
 import Pagination from "../navigation/Pagination";
+import DetailedPost from "./DetailedPost";
 const PostsList = () => {
   const [data, setData] = useState<Post[]>([]);
+  const [selectedPost, setSelectedPost] = useState<Post | null>(null);
   const [page, setPage] = useState(1);
   const [totalPage, setTotalPage] = useState(1);
   const perPage = 3;
+
+  const handleCardClick = (post: Post) => {
+    setSelectedPost(post);
+  };
 
   useEffect(() => {
     let mounted = true;
@@ -39,9 +45,17 @@ const PostsList = () => {
       </div>
       <div className="grid grid-cols-3 gap-10">
         {filteredPost.map((post: any) => (
-          <PostCard key={post.id} post={post} />
+          <PostCard key={post.id} post={post} onCardClick={handleCardClick} />
         ))}
       </div>
+      {selectedPost && (
+        <DetailedPost
+          post={selectedPost}
+          onClose={() => {
+            setSelectedPost(null);
+          }}
+        />
+      )}
       <Pagination page={page} totalPage={totalPage} setPage={setPage} />
     </>
   );
