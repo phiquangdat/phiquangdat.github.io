@@ -10,7 +10,10 @@ export interface Post {
   created_at?: string;
 }
 
-const API_BASE_URL = import.meta.env.VITE_API_URL + "api";
+// Build API base URL robustly: ensure there's no duplicate or missing slash
+const rawBase = import.meta.env.VITE_API_URL ?? "/";
+const trimmed = rawBase.replace(/\/+$/, "");
+const API_BASE_URL = `${trimmed}/api`;
 
 export async function getPosts(): Promise<{ data: Post[]; total: number }> {
   try {
