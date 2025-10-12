@@ -1,6 +1,8 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const HomeIntro = () => {
+  const navigate = useNavigate();
   return (
     <div className="flex max-w-4xl mb-12 gap-8 items-center group">
       <div className="relative">
@@ -28,6 +30,13 @@ const HomeIntro = () => {
             <span className="absolute bottom-0 left-0 w-full h-0.5 bg-blue-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></span>
           </span>{" "}
           who builds modern, user-friendly web applications.
+        </p>
+
+        <p
+          className="text-sky-800 hover:text-sky-600 hover:underline cursor-pointer "
+          onClick={() => navigate("/about")}
+        >
+          Read more
         </p>
 
         <div className="flex items-center gap-2 mt-2">

@@ -3,6 +3,7 @@ import { createBrowserRouter } from "react-router-dom";
 import MoviePage from "../components/movies/MoviePage";
 import Layout from "../layout/Layout";
 import Home from "../components/home/Home";
+import Books from "../components/Books";
 import About from "../components/about/About";
 
 export const router = createBrowserRouter([
@@ -13,6 +14,7 @@ export const router = createBrowserRouter([
       { index: true, element: <Home /> },
       { path: "/movies", element: <MoviePage /> },
       { path: "/about", element: <About /> },
+      { path: "/books", element: <Books /> },
     ],
   },
 ]);
