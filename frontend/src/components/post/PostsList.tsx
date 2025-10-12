@@ -9,15 +9,26 @@ const PostsList = () => {
   const perPage = 3;
 
   useEffect(() => {
-    async function fetchData() {
-      const { data: post, total } = await getPosts();
+    let mounted = true;
 
-      setData(post);
-      setTotalPage(Math.ceil(total / perPage));
+    async function fetchData() {
+      try {
+        const { data: post, total } = await getPosts();
+        if (!mounted) return;
+
+        setData(post);
+        setTotalPage(Math.ceil(total / perPage));
+      } catch (err) {
+        console.error("Failed to load posts:", err);
+      }
     }
 
     fetchData();
-  }, [page, data]);
+
+    return () => {
+      mounted = false;
+    };
+  }, [page]);
 
   const startIndex = (page - 1) * perPage;
   const filteredPost = data.slice(startIndex, startIndex + perPage);
