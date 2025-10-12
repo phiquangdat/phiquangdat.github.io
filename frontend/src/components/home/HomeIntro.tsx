@@ -5,7 +5,7 @@ const HomeIntro = () => {
     <div className="flex max-w-4xl mb-12 gap-8 items-center group">
       <div className="relative">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full blur-xl opacity-30 group-hover:opacity-50 transition-opacity duration-500"></div>
-        <div className="relative w-52 h-52 overflow-hidden rounded-full ring-4 ring-white shadow-2xl transform transition-transform duration-500 group-hover:scale-105">
+        <div className="relative w-52 h-52 overflow-hidden rounded-full shadow-2xl transform transition-transform duration-500 group-hover:scale-105">
           <img
             src="https://behktimywwtdkxmpursa.supabase.co/storage/v1/object/public/images/DatPhi%20-%20photo.png"
             alt="dat phi cover"
@@ -19,7 +19,6 @@ const HomeIntro = () => {
           <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-gray-900 via-gray-800 to-gray-700 bg-clip-text text-transparent mb-2 font-serif tracking-tight">
             Dat Phi
           </h1>
-          <div className="h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full transform origin-left transition-transform duration-700 group-hover:scale-x-100 scale-x-0"></div>
         </div>
 
         <p className="text-xl md:text-2xl text-gray-600 leading-relaxed max-w-xl">
@@ -31,7 +30,7 @@ const HomeIntro = () => {
           who builds modern, user-friendly web applications.
         </p>
 
-        <div className="flex gap-2 mt-2">
+        <div className="flex items-center gap-2 mt-2">
           <span className="inline-block w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
           <span className="text-sm text-gray-500 font-medium">
             Available for projects

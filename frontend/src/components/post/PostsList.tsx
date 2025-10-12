@@ -40,7 +40,7 @@ const PostsList = () => {
   const filteredPost = data.slice(startIndex, startIndex + perPage);
   return (
     <>
-      <div>
+      <div className="mt-20 flex">
         <h2 className="text-2xl font-semibold">Projects</h2>
       </div>
       <div className="grid grid-cols-3 gap-10">

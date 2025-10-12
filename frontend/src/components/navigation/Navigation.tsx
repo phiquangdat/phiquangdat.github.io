@@ -47,6 +47,12 @@ const Navigation = ({ isScrolled }: { isScrolled: boolean }) => {
                 navigate("/books");
               }}
             />
+            <NavBar
+              title="About"
+              onClick={() => {
+                navigate("/about");
+              }}
+            />
           </div>
 
           <div className="md:flex items-center space-x-4 gap-4">
