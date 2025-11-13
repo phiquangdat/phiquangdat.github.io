@@ -7,7 +7,7 @@ const Footer = () => {
         <ul className="flex justify-center space-x-8 mb-4 text-sm">
           <li>
             <a
-              href="#"
+              href="/"
               className="text-gray-600 hover:text-primary-600 transition-colors"
             >
               Home

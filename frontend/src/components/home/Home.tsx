@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import HomeIntro from "./HomeIntro";
 import PostsList from "../post/PostsList";
-import Navigation from "../navigation/Navigation";
 
 function Home() {
   const [isScrolled, setIsScrolled] = useState(false);

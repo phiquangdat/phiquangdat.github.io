@@ -26,6 +26,17 @@ const About = () => {
         <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto rounded-full"></div>
       </div>
 
+      <div className="flex justify-center mb-16">
+        <a
+          href="/transcript_record.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full hover:from-blue-700 hover:to-purple-700 transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
+        >
+          <span className="font-semibold">📘 Check My Transcript</span>
+        </a>
+      </div>
+
       <EduMap />
 
       <div className="mt-16 bg-gradient-to-br from-gray-50 to-blue-50 rounded-2xl p-8 md:p-10 border border-gray-200 shadow-sm">
