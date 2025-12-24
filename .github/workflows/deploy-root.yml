@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  build_push_to_main:
+  deploy_frontend:
     runs-on: ubuntu-latest
 
     steps:
@@ -27,6 +27,7 @@ jobs:
           VITE_TMDB_API_TOKEN: ${{ secrets.VITE_TMDB_API_TOKEN }}
           VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
+          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
 
       - name: Copy built output to root
         run: |
@@ -40,3 +41,21 @@ jobs:
           git add .
           git commit -m "Deploy Vite build to root for GitHub Pages [skip ci]" || echo "No changes to commit"
           git push origin main
+
+  deploy-backend:
+    needs: deploy_frontend
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Flyctl
+        uses: superfly/flyctl-actions/setup-flyctl@master
+
+      - name: Deploy to Fly.io
+        run: |
+          cd backend
+          flyctl deploy --remote-only
+
+        env:
+          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
