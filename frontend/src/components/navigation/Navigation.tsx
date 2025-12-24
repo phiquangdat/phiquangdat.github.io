@@ -28,9 +28,6 @@ const Navigation = ({ isScrolled }: { isScrolled: boolean }) => {
             href="#home"
           >
             <div className="relative">
-              <span className="text-4xl mr-3 transform group-hover:scale-125 group-hover:rotate-12 transition-all duration-300 filter drop-shadow-[0_0_8px_rgba(255,255,255,0.8)]">
-                🚀
-              </span>
               <div className="absolute inset-0 bg-white/30 blur-xl rounded-full group-hover:bg-blue-300/50 transition-all"></div>
             </div>
             <span className="font-serif text-2xl lg:text-3xl bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-white group-hover:from-blue-100 group-hover:via-white group-hover:to-blue-100 transition-all duration-300">
@@ -41,7 +38,6 @@ const Navigation = ({ isScrolled }: { isScrolled: boolean }) => {
           <div className="md:flex items-center space-x-4 bg-white/10 backdrop-blur-md px-6 py-3 rounded-full border border-white/20 shadow-lg">
             <NavBar title="Home" onClick={() => navigate("/")} />
             <NavBar title="Movies" onClick={() => navigate("/movies")} />
-            <NavBar title="Books" onClick={() => navigate("/books")} />
             <NavBar title="About" onClick={() => navigate("/about")} />
           </div>
 

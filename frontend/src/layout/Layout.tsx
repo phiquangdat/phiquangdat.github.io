@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Outlet } from "react-router-dom";
 import Footer from "../components/home/Footer";
 import Navigation from "../components/navigation/Navigation";
+import ScrollToTop from "../components/common/ScrollToTop";
 
 const Layout = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -17,6 +18,7 @@ const Layout = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-white via-blue-50 to-sky-50">
+      <ScrollToTop />
       <div className="fixed inset-0 z-0 opacity-20">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(37,99,235,0.08),transparent_50%)]"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(59,130,246,0.08),transparent_50%)]"></div>

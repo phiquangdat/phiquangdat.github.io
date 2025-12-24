@@ -6,7 +6,7 @@ const HomeIntro = () => {
   return (
     <div className="flex max-w-4xl mb-12 gap-8 items-center group">
       <div className="relative">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full blur-xl opacity-30 group-hover:opacity-50 transition-opacity duration-500"></div>
+        <div className="absolute inset-0 rounded-full blur-xl opacity-30 group-hover:opacity-50 transition-opacity duration-500"></div>
         <div className="relative w-52 h-52 overflow-hidden rounded-full shadow-2xl transform transition-transform duration-500 group-hover:scale-105">
           <img
             src="https://behktimywwtdkxmpursa.supabase.co/storage/v1/object/public/images/DatPhi%20-%20photo.png"
