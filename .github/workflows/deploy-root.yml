@@ -43,6 +43,7 @@ jobs:
           git push origin main
 
   deploy-backend:
+    needs: deploy_frontend
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -56,7 +57,10 @@ jobs:
           cache: 'maven'
 
       - name: Build with Maven
-        run: ./mvnw clean package -DskipTests
+        run: |
+          cd backend
+          chmod +x mvnw
+          ./mvnw clean package -DskipTests
       
       - name: Copy JAR to Server
         uses: appleboy/scp-action@master
@@ -64,16 +68,17 @@ jobs:
           host: ${{ secrets.REMOTE_HOST }}
           username: ${{ secrets.REMOTE_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          source: "target/*.jar"
+          source: "target/*.jar,docker-compose.yml"
           target: "/root"
-          strip_components: 1
+          strip_components: 2
 
-      - name: Restart Systemd Service
+      - name: Deploy with Docker Compose
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.REMOTE_HOST }}
           username: ${{ secrets.REMOTE_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            mv /root/*.jar /root/app.jar
-            systemctl restart backend
+            cd /root
+            mv *.jar app.jar || true
+            docker compose up -d --build backend
