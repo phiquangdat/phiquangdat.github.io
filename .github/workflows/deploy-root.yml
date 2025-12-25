@@ -61,26 +61,27 @@ jobs:
           cd backend
           chmod +x mvnw
           ./mvnw clean package -DskipTests
+      
+      - name: Copy Files to Server (IPv4)
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.REMOTE_HOST }}
+          username: ${{ secrets.REMOTE_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: 22
+          source: "backend/target/*.jar,docker-compose.yml"
+          target: "/root"
+          strip_components: 2
 
-      - name: Deploy to Hetzner via SSH
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-          REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
-          REMOTE_USER: ${{ secrets.REMOTE_USER }}
-        run: |
-          echo "$SSH_PRIVATE_KEY" > deploy_key
-          chmod 600 deploy_key
-
-          mkdir -p ~/.ssh
-          ssh-keyscan -6 -t rsa "$REMOTE_HOST" >> ~/.ssh/known_hosts
-
-          scp -i deploy_key backend/target/*.jar "[$REMOTE_HOST]:/root/app.jar"
-          scp -i deploy_key docker-compose.yml "[$REMOTE_HOST]:/root/docker-compose.yml"
-
-          ssh -i deploy_key "[$REMOTE_HOST]" << 'EOF'
+      - name: Deploy with Docker Compose
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.REMOTE_HOST }}
+          username: ${{ secrets.REMOTE_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: 22
+          script: |
             cd /root
+            rm -f app.jar
+            mv *.jar app.jar || true
             docker compose up -d --build backend
-          EOF
-
-          rm deploy_key
-    
