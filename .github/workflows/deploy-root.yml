@@ -73,16 +73,14 @@ jobs:
           chmod 600 ~/.ssh/deploy_key
           ssh-keyscan -H "$REMOTE_HOST" >> ~/.ssh/known_hosts
           
-          scp -i ~/.ssh/deploy_key backend/target/*.jar docker-compose.yml "$REMOTE_USER@$REMOTE_HOST":/root/
+          scp -i ~/.ssh/deploy_key backend/target/*.jar docker-compose.deploy.yml "$REMOTE_USER@$REMOTE_HOST":/root/
           
           ssh -i ~/.ssh/deploy_key "$REMOTE_USER@$REMOTE_HOST" << 'EOF'
-            set -e 
+            set -e
             cd /root
-            
-            ls -l *.jar
             
             target_jar=$(ls -t *.jar | head -1)
             mv "$target_jar" app.jar
             
-            docker compose up -d --build backend
+            docker compose -f docker-compose.deploy.yml up -d
           EOF
