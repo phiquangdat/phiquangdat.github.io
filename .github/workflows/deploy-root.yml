@@ -71,12 +71,18 @@ jobs:
           mkdir -p ~/.ssh
           echo "$SSH_PRIVATE_KEY" > ~/.ssh/deploy_key
           chmod 600 ~/.ssh/deploy_key
-          
           ssh-keyscan -H "$REMOTE_HOST" >> ~/.ssh/known_hosts
           
+          scp -i ~/.ssh/deploy_key backend/target/*.jar docker-compose.yml "$REMOTE_USER@$REMOTE_HOST":/root/
+          
           ssh -i ~/.ssh/deploy_key "$REMOTE_USER@$REMOTE_HOST" << 'EOF'
+            set -e 
             cd /root
-            [ -f app.jar ] && rm app.jar
-            mv *.jar app.jar || true
+            
+            ls -l *.jar
+            
+            target_jar=$(ls -t *.jar | head -1)
+            mv "$target_jar" app.jar
+            
             docker compose up -d --build backend
           EOF
