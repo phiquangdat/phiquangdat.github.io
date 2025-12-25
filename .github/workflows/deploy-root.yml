@@ -61,17 +61,6 @@ jobs:
           cd backend
           chmod +x mvnw
           ./mvnw clean package -DskipTests
-      
-      - name: Copy Files to Server (IPv4)
-        uses: appleboy/scp-action@v0.1.7
-        with:
-          host: ${{ secrets.REMOTE_HOST }}
-          username: ${{ secrets.REMOTE_USER }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          port: 22
-          source: "backend/target/*.jar,docker-compose.yml"
-          target: "/root"
-          strip_components: 2
 
       - name: Deploy with Docker Compose
         env:
