@@ -29,17 +29,21 @@ jobs:
           VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
 
-      - name: Copy built output to root
-        run: |
-          rm -rf ./assets ./static ./index.html ./manifest.json ./asset-manifest.json
-          cp -r frontend/dist/* ./
-
-      - name: Commit and push build to main
+      - name: Commit and push build to root
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          
+          cp vercel.json temp_vercel.json || echo '{"rewrites": [{"source": "/api/:path*", "destination": "http://157.180.78.135:8080/api/:path*"}]}' > temp_vercel.json
+          
+          find . -maxdepth 1 ! -name '.git' ! -name 'temp_vercel.json' ! -name 'frontend' ! -name 'backend' ! -name '.' -exec rm -rf {} +
+          
+          cp -r frontend/dist/* ./
+          
+          mv temp_vercel.json vercel.json
+          
           git add .
-          git commit -m "Deploy Vite build to root for GitHub Pages [skip ci]" || echo "No changes to commit"
+          git commit -m "Deploy: Fix file structure for Vercel root [skip ci]" || echo "No changes"
           git push origin main
 
   deploy-backend:
