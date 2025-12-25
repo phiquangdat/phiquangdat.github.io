@@ -74,15 +74,20 @@ jobs:
           strip_components: 2
 
       - name: Deploy with Docker Compose
-        uses: appleboy/ssh-action@v1.2.0
-        with:
-          host: ${{ secrets.REMOTE_HOST }}
-          username: ${{ secrets.REMOTE_USER }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          port: 22
-          debug: true
-          script: |
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+          REMOTE_USER: ${{ secrets.REMOTE_USER }}
+        run: |
+          mkdir -p ~/.ssh
+          echo "$SSH_PRIVATE_KEY" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          
+          ssh-keyscan -H "$REMOTE_HOST" >> ~/.ssh/known_hosts
+          
+          ssh -i ~/.ssh/deploy_key "$REMOTE_USER@$REMOTE_HOST" << 'EOF'
             cd /root
-            rm -f app.jar
+            [ -f app.jar ] && rm app.jar
             mv *.jar app.jar || true
             docker compose up -d --build backend
+          EOF
