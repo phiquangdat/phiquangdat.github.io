@@ -1,0 +1,57 @@
+# Gitleaks configuration file
+# This file configures gitleaks to detect secrets in your repository
+
+[gitleaks]
+  # Enable gitleaks
+  enable = true
+  
+  # Path to the repository
+  path = "."
+  
+  # Output format
+  format = "json"
+  
+  # Output file
+  output = "gitleaks-report.json"
+  
+  # Verbose output
+  verbose = true
+
+# Custom rules for your project
+[[rules]]
+  id = "tmdb-api-key"
+  description = "TMDB API Key"
+  regex = '''(?i)(tmdb[_-]?api[_-]?key|themoviedb[_-]?api[_-]?key)["\s]*[:=]["\s]*[a-zA-Z0-9]{32}'''
+  tags = ["api", "tmdb", "movie"]
+
+[[rules]]
+  id = "supabase-url"
+  description = "Supabase URL"
+  regex = '''https://[a-zA-Z0-9-]+\.supabase\.co'''
+  tags = ["supabase", "database"]
+
+[[rules]]
+  id = "supabase-anon-key"
+  description = "Supabase Anon Key"
+  regex = '''eyJ[A-Za-z0-9_-]*\.eyJ[A-Za-z0-9_-]*\.[A-Za-z0-9_-]*'''
+  tags = ["supabase", "jwt", "anon"]
+
+# Exclude certain files and directories
+[gitleaks.exclude]
+  paths = [
+    "node_modules/",
+    ".git/",
+    "dist/",
+    "build/",
+    "coverage/",
+    "*.log",
+    "package-lock.json",
+    "yarn.lock"
+  ]
+  
+  # Exclude certain file extensions
+  extensions = [
+    ".min.js",
+    ".min.css",
+    ".map"
+  ]
