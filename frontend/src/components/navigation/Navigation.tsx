@@ -13,11 +13,7 @@ const Navigation = ({ isScrolled }: { isScrolled: boolean }) => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled
-          ? "bg-gradient-to-r from-blue-900 via-blue-800 to-blue-900 shadow-2xl shadow-blue-500/20"
-          : "bg-gradient-to-r from-blue-600 via-blue-500 to-sky-600"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-blue-500  shadow-2xl shadow-blue-500/20`}
     >
       <div className="absolute inset-0 bg-white/5 backdrop-blur-xl"></div>
       

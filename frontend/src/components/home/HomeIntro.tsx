@@ -1,49 +1,64 @@
 import React from "react";
+import { FileText, Download } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 const HomeIntro = () => {
   const navigate = useNavigate();
+
   return (
-    <div className="flex max-w-4xl mb-12 gap-8 items-center group">
-      <div className="relative">
-        <div className="absolute inset-0 rounded-full blur-xl opacity-30 group-hover:opacity-50 transition-opacity duration-500"></div>
-        <div className="relative w-52 h-52 overflow-hidden rounded-full shadow-2xl transform transition-transform duration-500 group-hover:scale-105">
-          <img
-            src="https://behktimywwtdkxmpursa.supabase.co/storage/v1/object/public/images/DatPhi%20-%20photo.png"
-            alt="dat phi cover"
-            className="w-full h-full object-cover object-[50%_10%]"
-          />
+    <div className="max-w-4xl mx-auto px-6">
+      <div className="space-y-8 mx-auto">
+        <div className="flex gap-12 items-end space-y-3">
+          <div className="relative w-52 h-52 overflow-hidden rounded-full shadow-2xl transform transition-transform duration-500 group-hover:scale-105">
+            <img
+              src="https://behktimywwtdkxmpursa.supabase.co/storage/v1/object/public/images/DatPhi%20-%20photo.png"
+              alt="dat phi cover"
+              className="w-full h-full object-cover object-[50%_10%]"
+            />
+          </div>
+          <div className="flex flex-col">
+            <h1 className="text-5xl md:text-6xl font-semibold text-gray-900 tracking-tight">
+              Dat Phi
+            </h1>
+            <p className="text-xl text-gray-600 font-light">
+              Full-Stack Developer
+            </p>
+          </div>
         </div>
-      </div>
 
-      <div className="flex flex-col gap-3">
-        <div className="inline-block">
-          <h1 className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-gray-900 via-gray-800 to-gray-700 bg-clip-text text-transparent mb-2 font-serif tracking-tight">
-            Dat Phi
-          </h1>
-        </div>
-
-        <p className="text-xl md:text-2xl text-gray-600 leading-relaxed max-w-xl">
-          Hi, I'm Dat. A{" "}
-          <span className="font-semibold text-gray-800 relative inline-block">
-            Full-Stack Developer
-            <span className="absolute bottom-0 left-0 w-full h-0.5 bg-blue-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></span>
-          </span>{" "}
-          who builds modern, user-friendly web applications.
+        <p className="text-lg text-gray-700 leading-relaxed max-w-3xl">
+          I specialize in building scalable web applications with modern technologies. 
+          My work focuses on delivering robust solutions that combine technical excellence 
+          with exceptional user experience.
         </p>
 
-        <p
-          className="text-sky-800 hover:text-sky-600 hover:underline cursor-pointer "
-          onClick={() => navigate("/about")}
-        >
-          Read more
-        </p>
-
-        <div className="flex items-center gap-2 mt-2">
-          <span className="inline-block w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
-          <span className="text-sm text-gray-500 font-medium">
-            Available for projects
-          </span>
+        <div className="flex flex-wrap gap-4 pt-2">
+          <a 
+            href="/Dat Phi Resume.pdf" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="inline-flex items-center gap-2.5 px-7 py-3 bg-gray-900 text-white text-sm font-medium tracking-wide hover:bg-gray-800 transition-colors duration-200"
+          >
+            <FileText className="w-4 h-4" />
+            RESUME
+          </a>
+          
+          <a 
+            href="/Transcript Record.pdf" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="inline-flex items-center gap-2.5 px-7 py-3 bg-white border border-gray-300 text-gray-700 text-sm font-medium tracking-wide hover:bg-gray-50 transition-colors duration-200"
+          >
+            <Download className="w-4 h-4" />
+            TRANSCRIPT
+          </a>
+          
+          <button
+            onClick={() => navigate("/about")}
+            className="inline-flex items-center gap-2.5 px-7 py-3 bg-white border border-gray-300 text-gray-700 text-sm font-medium tracking-wide hover:bg-gray-50 transition-colors duration-200"
+          >
+            ABOUT ME
+          </button>
         </div>
       </div>
     </div>
