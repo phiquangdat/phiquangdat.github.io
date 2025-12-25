@@ -63,7 +63,7 @@ jobs:
           ./mvnw clean package -DskipTests
       
       - name: Copy Files to Server (IPv4)
-        uses: appleboy/scp-action@v1.2.0
+        uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.REMOTE_HOST }}
           username: ${{ secrets.REMOTE_USER }}
