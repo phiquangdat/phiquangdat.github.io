@@ -63,7 +63,7 @@ jobs:
           ./mvnw clean package -DskipTests
       
       - name: Copy Files to Server (IPv4)
-        uses: appleboy/scp-action@master
+        uses: appleboy/scp-action@v1.2.0
         with:
           host: ${{ secrets.REMOTE_HOST }}
           username: ${{ secrets.REMOTE_USER }}
@@ -74,12 +74,13 @@ jobs:
           strip_components: 2
 
       - name: Deploy with Docker Compose
-        uses: appleboy/ssh-action@master
+        uses: appleboy/ssh-action@v1.2.0
         with:
           host: ${{ secrets.REMOTE_HOST }}
           username: ${{ secrets.REMOTE_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 22
+          debug: true
           script: |
             cd /root
             rm -f app.jar
