@@ -8,7 +8,7 @@ type PostCardProps = {
 
 const PostCard: React.FC<PostCardProps> = React.memo(
   ({ post, onCardClick }) => {
-    const { title, description, date, readTime, link, imageUrl } = post;
+    const { title, description, date, link, imageUrl } = post;
 
     return (
       <div
@@ -75,7 +75,6 @@ const PostCard: React.FC<PostCardProps> = React.memo(
                   d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
                 />
               </svg>
-              <span className="font-medium">{readTime}</span>
             </div>
           </div>
         </div>
