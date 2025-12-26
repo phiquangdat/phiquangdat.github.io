@@ -38,14 +38,19 @@ jobs:
           chmod 600 ~/.ssh/deploy_key
           ssh-keyscan -H "$REMOTE_HOST" >> ~/.ssh/known_hosts
 
+          ssh -i ~/.ssh/deploy_key "$REMOTE_USER@$REMOTE_HOST" "rm -f /root/*.jar"
+
           scp -i ~/.ssh/deploy_key backend/target/*.jar docker-compose.deploy.yml "$REMOTE_USER@$REMOTE_HOST":/root/
 
           ssh -i ~/.ssh/deploy_key "$REMOTE_USER@$REMOTE_HOST" << 'EOF'
-            set -e
             cd /root
-            
-            target_jar=$(ls -t *.jar | head -1)
-            mv "$target_jar" app.jar
-            
-            docker compose -f docker-compose.deploy.yml up -d
+            latest_jar=$(ls -t *.jar | head -1)
+            if [ -n "$latest_jar" ]; then
+              mv "$latest_jar" app.jar
+              docker compose -f docker-compose.deploy.yml down
+              docker compose -f docker-compose.deploy.yml up -d --build
+            else
+              echo "Error: No jar file found after SCP!"
+              exit 1
+            fi
           EOF
