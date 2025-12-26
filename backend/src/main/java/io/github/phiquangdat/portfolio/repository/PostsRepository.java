@@ -2,6 +2,8 @@ package io.github.phiquangdat.portfolio.repository;
 
 import io.github.phiquangdat.portfolio.model.Posts;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -15,11 +17,10 @@ public interface PostsRepository extends JpaRepository<Posts, Long> {
 
     List<Posts> findByDateContaining(String date);
 
-    List<Posts> findByReadTimeContaining(String readTime);
-
-    List<Posts> findByIconContaining(String icon);
-
     List<Posts> findByLinkContaining(String link);
 
     List<Posts> findByImageUrlContaining(String imageUrl);
+
+    @Query(value = "SELECT * FROM posts WHERE :language = ANY(languages)", nativeQuery = true)
+    List<Posts> findByLanguage(@Param("language") String language);
 }

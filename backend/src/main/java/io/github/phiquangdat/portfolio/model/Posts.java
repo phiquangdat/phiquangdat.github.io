@@ -6,9 +6,18 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import java.util.List;
+import org.hibernate.annotations.JdbcTypeCode;
+import org.hibernate.type.SqlTypes;
 
 @Entity
 @Table(name = "posts")
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 public class Posts {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,90 +31,12 @@ public class Posts {
 
     private String date;
 
-    private String readTime;
-
-    private String icon;
-
     private String link;
 
+    @Column(name="image_url")
     private String imageUrl;
 
-    // Default constructor
-    public Posts() {}
-
-    // Constructor with parameters
-    public Posts(String title, String description, String date, String readTime, String icon, String link, String imageUrl) {
-        this.title = title;
-        this.description = description;
-        this.date = date;
-        this.readTime = readTime;
-        this.icon = icon;
-        this.link = link;
-        this.imageUrl = imageUrl;
-    }
-
-    // Getters and Setters
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getDate() {
-        return date;
-    }
-
-    public void setDate(String date) {
-        this.date = date;
-    }
-
-    public String getReadTime() {
-        return readTime;
-    }
-
-    public void setReadTime(String readTime) {
-        this.readTime = readTime;
-    }
-
-    public String getIcon() {
-        return icon;
-    }
-
-    public void setIcon(String icon) {
-        this.icon = icon;
-    }
-
-    public String getLink() {
-        return link;
-    }
-
-    public void setLink(String link) {
-        this.link = link;
-    }
-
-    public String getImageUrl() {
-        return imageUrl;
-    }
-
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
-    }
+    @Column(name = "languages", columnDefinition = "text[]")
+    @JdbcTypeCode(SqlTypes.ARRAY)
+    private List<String> languages;
 }

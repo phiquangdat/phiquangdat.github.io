@@ -61,10 +61,9 @@ public class PostsController {
             post.setTitle(postDetails.getTitle());
             post.setDescription(postDetails.getDescription());
             post.setDate(postDetails.getDate());
-            post.setReadTime(postDetails.getReadTime());
-            post.setIcon(postDetails.getIcon());
             post.setLink(postDetails.getLink());
             post.setImageUrl(postDetails.getImageUrl());
+            post.setLanguages(postDetails.getLanguages());
             
             Posts updatedPost = postsRepository.save(post);
             return ResponseEntity.ok(updatedPost);

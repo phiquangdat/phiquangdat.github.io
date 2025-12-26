@@ -6,6 +6,8 @@ type PostDetailModalProps = {
   onClose: () => void;
 };
 
+import { icons } from "../../constants/techIcons";
+
 const PostDetailModal: React.FC<PostDetailModalProps> = ({ post, onClose }) => {
   return (
     <div
@@ -31,6 +33,52 @@ const PostDetailModal: React.FC<PostDetailModalProps> = ({ post, onClose }) => {
           alt={post.title}
           className="w-full h-64 object-contain rounded-md mb-6"
         />
+        <div className="flex flex-wrap gap-2.5">
+          {post.languages?.map((lang) => {
+            const fullTechKey = lang.toLowerCase().replace(/[\s\.\-]/g, "");
+
+            if (icons[fullTechKey]) {
+              return (
+                <div
+                  key={lang}
+                  className="group flex items-center gap-2 px-3 py-1.5 rounded-lg bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900 border border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600 transition-all duration-200 hover:shadow-md hover:-translate-y-0.5"
+                >
+                  <img
+                    src={icons[fullTechKey]}
+                    alt={`${lang} icon`}
+                    className="w-5 h-5 object-contain group-hover:scale-110 transition-transform duration-200"
+                  />
+                  <span className="text-sm font-semibold text-gray-800 dark:text-gray-200">
+                    {lang}
+                  </span>
+                </div>
+              );
+            }
+
+            return lang.split(/\s+/).map((word) => {
+              const wordKey = word.toLowerCase().replace(/[\s\.\-]/g, "");
+              const wordIcon = icons[wordKey];
+
+              return (
+                <div
+                  key={`${lang}-${word}`}
+                  className="group flex items-center gap-2 px-3 py-1.5 rounded-lg bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900 border border-gray-200 dark:border-gray-700 hover:border-gray-300 dark:hover:border-gray-600 transition-all duration-200 hover:shadow-md hover:-translate-y-0.5"
+                >
+                  {wordIcon && (
+                    <img
+                      src={wordIcon}
+                      alt={`${word} icon`}
+                      className="w-5 h-5 object-contain group-hover:scale-110 transition-transform duration-200"
+                    />
+                  )}
+                  <span className="text-sm font-semibold text-gray-800 dark:text-gray-200">
+                    {word}
+                  </span>
+                </div>
+              );
+            });
+          })}
+        </div>
         <p className="text-gray-700 leading-relaxed whitespace-pre-wrap">
           {post.description}
         </p>

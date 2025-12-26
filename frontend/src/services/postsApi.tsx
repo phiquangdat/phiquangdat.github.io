@@ -3,11 +3,9 @@ export interface Post {
   title: string;
   description: string;
   date: string;
-  readTime: string;
-  icon?: string;
   link?: string;
   imageUrl?: string;
-  created_at?: string;
+  languages?: string[];
 }
 
 // Build API base URL robustly: ensure there's no duplicate or missing slash
