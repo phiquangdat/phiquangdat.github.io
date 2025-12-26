@@ -1,1 +1,30 @@
-{"root":["./src/App.tsx","./src/env.d.ts","./src/index.tsx","./src/reportWebVitals.ts","./src/vite-env.d.ts","./src/components/Books.tsx","./src/components/about/About.tsx","./src/components/about/EduMap.tsx","./src/components/common/ScrollToTop.tsx","./src/components/home/Footer.tsx","./src/components/home/Home.tsx","./src/components/home/HomeIntro.tsx","./src/components/movies/MovieCard.tsx","./src/components/movies/MoviePage.tsx","./src/components/navigation/NavBar.tsx","./src/components/navigation/Navigation.tsx","./src/components/navigation/Pagination.tsx","./src/components/post/DetailedPost.tsx","./src/components/post/PostCard.tsx","./src/components/post/PostsList.tsx","./src/constants/techIcons.ts","./src/layout/Layout.tsx","./src/routes/route.tsx","./src/services/movieApi.tsx","./src/services/postsApi.tsx"],"version":"5.9.3"}
+{
+  "root": [
+    "src/App.tsx",
+    "src/env.d.ts",
+    "src/index.tsx",
+    "src/reportWebVitals.ts",
+    "src/vite-env.d.ts",
+    "src/components/Books.tsx",
+    "src/components/about/About.tsx",
+    "src/components/about/EduMap.tsx",
+    "src/components/common/ScrollToTop.tsx",
+    "src/components/home/Footer.tsx",
+    "src/components/home/Home.tsx",
+    "src/components/home/HomeIntro.tsx",
+    "src/components/movies/MovieCard.tsx",
+    "src/components/movies/MoviePage.tsx",
+    "src/components/navigation/NavBar.tsx",
+    "src/components/navigation/Navigation.tsx",
+    "src/components/navigation/Pagination.tsx",
+    "src/components/post/DetailedPost.tsx",
+    "src/components/post/PostCard.tsx",
+    "src/components/post/PostsList.tsx",
+    "src/constants/techIcons.ts",
+    "src/layout/Layout.tsx",
+    "src/routes/route.tsx",
+    "src/services/movieApi.tsx",
+    "src/services/postsApi.tsx"
+  ],
+  "version": "5.9.3"
+}
