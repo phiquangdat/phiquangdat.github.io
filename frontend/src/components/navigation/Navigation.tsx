@@ -13,166 +13,168 @@ const Navigation = ({ isScrolled }: { isScrolled: boolean }) => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-blue-500  shadow-2xl shadow-blue-500/20`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-blue-500 backdrop-blur-md shadow-lg shadow-blue-600/20`}
     >
-      <div className="absolute inset-0 bg-white/5 backdrop-blur-xl"></div>
-      
-      <div className="container mx-auto px-4 sm:px-6 relative">
-        <div className="flex items-center justify-between h-20 lg:h-24">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16 lg:h-20">
           <a
-            className="flex items-center text-xl font-bold text-white transition-all duration-300 group relative z-10"
+            className="flex items-center text-xl font-bold transition-all duration-200 group relative"
             href="#home"
           >
-            <div className="relative">
-              <div className="absolute inset-0 bg-white/30 blur-xl rounded-full group-hover:bg-blue-300/50 transition-all"></div>
-            </div>
-            <span className="font-serif text-2xl lg:text-3xl bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-white group-hover:from-blue-100 group-hover:via-white group-hover:to-blue-100 transition-all duration-300">
+            <span className="font-serif text-2xl lg:text-3xl font-bold text-white hover:text-blue-50 transition-all duration-300">
               Dat Phi
             </span>
+            <div className="absolute -inset-2 bg-white/10 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full"></div>
           </a>
 
-          <div className="md:flex items-center space-x-4 bg-white/10 backdrop-blur-md px-6 py-3 rounded-full border border-white/20 shadow-lg">
-            <NavBar title="Home" onClick={() => navigate("/")} />
-            <NavBar title="Movies" onClick={() => navigate("/movies")} />
-            <NavBar title="About" onClick={() => navigate("/about")} />
+          <div className="hidden md:flex items-center space-x-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full border border-white/20">
+            <button
+              onClick={() => navigate("/")}
+              className="px-4 py-2 text-blue-50 hover:text-white hover:bg-white/15 rounded-full font-medium transition-all duration-200 relative group"
+            >
+              Home
+              <span className="absolute inset-x-0 -bottom-1 h-0.5 bg-white scale-x-0 group-hover:scale-x-100 transition-transform duration-200"></span>
+            </button>
+            <button
+              onClick={() => navigate("/movies")}
+              className="px-4 py-2 text-blue-50 hover:text-white hover:bg-white/15 rounded-full font-medium transition-all duration-200 relative group"
+            >
+              Movies
+              <span className="absolute inset-x-0 -bottom-1 h-0.5 bg-white scale-x-0 group-hover:scale-x-100 transition-transform duration-200"></span>
+            </button>
+            <button
+              onClick={() => navigate("/about")}
+              className="px-4 py-2 text-blue-50 hover:text-white hover:bg-white/15 rounded-full font-medium transition-all duration-200 relative group"
+            >
+              About
+              <span className="absolute inset-x-0 -bottom-1 h-0.5 bg-white scale-x-0 group-hover:scale-x-100 transition-transform duration-200"></span>
+            </button>
           </div>
 
-          <div className="hidden md:flex items-center space-x-3">
+          <div className="hidden md:flex items-center space-x-2">
             <a
-              className="relative group p-3 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 transition-all duration-300 hover:scale-110 hover:shadow-[0_0_20px_rgba(147,197,253,0.5)]"
+              className="p-2.5 rounded-full text-blue-100 hover:text-white hover:bg-white/15 transition-all duration-200 hover:scale-110 relative group"
               href="https://github.com/phiquangdat"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="GitHub"
             >
-              <i className="fab fa-github text-xl text-white"></i>
-              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-300 to-sky-300 opacity-0 group-hover:opacity-20 blur transition-opacity"></div>
+              <i className="fab fa-github text-lg"></i>
+              <div className="absolute inset-0 bg-white/20 blur-md opacity-0 group-hover:opacity-100 transition-opacity rounded-full"></div>
             </a>
             <a
-              className="relative group p-3 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 transition-all duration-300 hover:scale-110 hover:shadow-[0_0_20px_rgba(147,197,253,0.5)]"
+              className="p-2.5 rounded-full text-blue-100 hover:text-white hover:bg-white/15 transition-all duration-200 hover:scale-110 relative group"
               href="mailto:datqphi@gmail.com"
               aria-label="Email"
             >
-              <i className="fas fa-envelope text-xl text-white"></i>
-              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-300 to-sky-300 opacity-0 group-hover:opacity-20 blur transition-opacity"></div>
+              <i className="fas fa-envelope text-lg"></i>
+              <div className="absolute inset-0 bg-white/20 blur-md opacity-0 group-hover:opacity-100 transition-opacity rounded-full"></div>
             </a>
             <a
-              className="relative group p-3 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 transition-all duration-300 hover:scale-110 hover:shadow-[0_0_20px_rgba(147,197,253,0.5)]"
+              className="p-2.5 rounded-full text-blue-100 hover:text-white hover:bg-white/15 transition-all duration-200 hover:scale-110 relative group"
               href="https://www.linkedin.com/in/phiquangdat/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
             >
-              <i className="fab fa-linkedin text-xl text-white"></i>
-              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-300 to-sky-300 opacity-0 group-hover:opacity-20 blur transition-opacity"></div>
+              <i className="fab fa-linkedin text-lg"></i>
+              <div className="absolute inset-0 bg-white/20 blur-md opacity-0 group-hover:opacity-100 transition-opacity rounded-full"></div>
             </a>
           </div>
 
-          {/* Mobile Menu Button with Glow */}
           <button
-            className="md:hidden relative p-3 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 transition-all duration-300 hover:scale-110 hover:shadow-[0_0_20px_rgba(147,197,253,0.5)]"
+            className="md:hidden p-2 rounded-lg text-white hover:bg-white/15 transition-all duration-200"
             onClick={toggleMenu}
             aria-label="Toggle menu"
             aria-expanded={isMenuOpen}
           >
             {isMenuOpen ? (
-              <X className="w-6 h-6 text-white" />
+              <X className="w-6 h-6" />
             ) : (
-              <Menu className="w-6 h-6 text-white" />
+              <Menu className="w-6 h-6" />
             )}
           </button>
         </div>
 
-        {/* Mobile Menu with Glassmorphism */}
         <div
-          className={`md:hidden overflow-hidden transition-all duration-500 ease-in-out ${
-            isMenuOpen ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
+          className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+            isMenuOpen ? "max-h-96 opacity-100 pb-4" : "max-h-0 opacity-0"
           }`}
         >
-          <div className="py-4 space-y-2 bg-white/5 backdrop-blur-xl rounded-2xl border border-white/10 mb-4 shadow-2xl">
+          <div className="py-2 space-y-1 border-t border-white/20 mt-2 bg-white/10 backdrop-blur-sm rounded-lg p-3">
             <button
               onClick={() => {
                 navigate("/");
                 setIsMenuOpen(false);
               }}
-              className="block w-full text-left px-6 py-4 text-white font-medium hover:bg-white/10 transition-all duration-300 rounded-xl mx-2 hover:translate-x-2"
+              className="flex items-center w-full text-left px-4 py-3 text-blue-50 hover:text-white hover:bg-white/15 transition-all duration-200 rounded-lg font-medium"
             >
-              <span className="flex items-center">
-                <span className="mr-3 text-2xl">🏠</span>
-                Home
-              </span>
+              <span className="mr-3">🏠</span>
+              Home
             </button>
             <button
               onClick={() => {
                 navigate("/movies");
                 setIsMenuOpen(false);
               }}
-              className="block w-full text-left px-6 py-4 text-white font-medium hover:bg-white/10 transition-all duration-300 rounded-xl mx-2 hover:translate-x-2"
+              className="flex items-center w-full text-left px-4 py-3 text-blue-50 hover:text-white hover:bg-white/15 transition-all duration-200 rounded-lg font-medium"
             >
-              <span className="flex items-center">
-                <span className="mr-3 text-2xl">🎬</span>
-                Movies
-              </span>
+              <span className="mr-3">🎬</span>
+              Movies
             </button>
             <button
               onClick={() => {
                 navigate("/books");
                 setIsMenuOpen(false);
               }}
-              className="block w-full text-left px-6 py-4 text-white font-medium hover:bg-white/10 transition-all duration-300 rounded-xl mx-2 hover:translate-x-2"
+              className="flex items-center w-full text-left px-4 py-3 text-blue-50 hover:text-white hover:bg-white/15 transition-all duration-200 rounded-lg font-medium"
             >
-              <span className="flex items-center">
-                <span className="mr-3 text-2xl">📚</span>
-                Books
-              </span>
+              <span className="mr-3">📚</span>
+              Books
             </button>
             <button
               onClick={() => {
                 navigate("/about");
                 setIsMenuOpen(false);
               }}
-              className="block w-full text-left px-6 py-4 text-white font-medium hover:bg-white/10 transition-all duration-300 rounded-xl mx-2 hover:translate-x-2"
+              className="flex items-center w-full text-left px-4 py-3 text-blue-50 hover:text-white hover:bg-white/15 transition-all duration-200 rounded-lg font-medium"
             >
-              <span className="flex items-center">
-                <span className="mr-3 text-2xl">👤</span>
-                About
-              </span>
+              <span className="mr-3">👤</span>
+              About
             </button>
 
-            {/* Mobile Social Links */}
-            <div className="flex items-center justify-center space-x-4 pt-6 pb-4">
+            <div className="flex items-center justify-center space-x-3 pt-4 border-t border-white/20 mt-2">
               <a
-                className="p-3 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 transition-all duration-300 hover:scale-110"
+                className="p-2.5 rounded-full text-white hover:bg-white/15 transition-all duration-200"
                 href="https://github.com/phiquangdat"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub"
               >
-                <i className="fab fa-github text-xl text-white"></i>
+                <i className="fab fa-github text-lg"></i>
               </a>
               <a
-                className="p-3 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 transition-all duration-300 hover:scale-110"
+                className="p-2.5 rounded-full text-white hover:bg-white/15 transition-all duration-200"
                 href="mailto:datqphi@gmail.com"
                 aria-label="Email"
               >
-                <i className="fas fa-envelope text-xl text-white"></i>
+                <i className="fas fa-envelope text-lg"></i>
               </a>
               <a
-                className="p-3 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 transition-all duration-300 hover:scale-110"
+                className="p-2.5 rounded-full text-white hover:bg-white/15 transition-all duration-200"
                 href="https://www.linkedin.com/in/phiquangdat/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
               >
-                <i className="fab fa-linkedin text-xl text-white"></i>
+                <i className="fab fa-linkedin text-lg"></i>
               </a>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Animated Background Gradient */}
-      <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-blue-300 to-transparent opacity-50"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/30 to-transparent"></div>
     </nav>
   );
 };
