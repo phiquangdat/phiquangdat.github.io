@@ -17,7 +17,7 @@ fi
 
 # Run gitleaks check
 echo "🔍 Checking for secrets in staged files..."
-if gitleaks protect --staged --config .gitleaks.toml; then
+if gitleaks protect --staged --config scripts/.gitleaks.toml; then
     echo "✅ No secrets detected in staged files"
 else
     echo "❌ Secrets detected in staged files!"

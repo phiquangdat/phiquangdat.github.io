@@ -1,9 +1,0 @@
-{
-  "short_name": "Dat Phi",
-  "name": "Dat Phi - Personal Website",
-  "icons": [],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#2563eb",
-  "background_color": "#ffffff"
-}
