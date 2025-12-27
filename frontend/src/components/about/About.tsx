@@ -1,6 +1,6 @@
 import React from "react";
 import EduMap from "./EduMap";
-import GitHubStats from "./GithubStats";
+import GitHubStats from "./GitHubStats";
 import { GitHubCalendar } from "react-github-calendar";
 
 const GitHubIcon = () => (
